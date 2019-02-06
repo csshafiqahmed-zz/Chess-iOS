@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     private var versionLabel: UILabel!
     private var startGameButton: UIButton!
     private var joinGameButton: UIButton!
-    private var nameLabel: UITextField!
+    private var nameTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
             maker.height.equalTo(24)
         }
         
-        nameLabel.snp.makeConstraints { maker in
+        nameTextField.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(32)
             maker.right.equalToSuperview().inset(32)
             maker.top.equalTo(versionLabel.snp.bottom).offset(54)
@@ -89,13 +89,13 @@ class MainViewController: UIViewController {
         versionLabel.textAlignment = .center
         view.addSubview(versionLabel)
         
-        nameLabel = UITextField()
-        nameLabel.attributedPlaceholder = NSAttributedString(string: "Enter your name",
+        nameTextField = UITextField()
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "Enter your name",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: 0x9e9e9e)])
-        nameLabel.textColor = .white
-        nameLabel.font = UIFont.systemFont(ofSize: 36, weight: .medium)
-        nameLabel.textAlignment = .center
-        view.addSubview(nameLabel)
+        nameTextField.textColor = .white
+        nameTextField.font = UIFont.systemFont(ofSize: 36, weight: .medium)
+        nameTextField.textAlignment = .center
+        view.addSubview(nameTextField)
         
         startGameButton = UIButton()
         startGameButton.backgroundColor = .highlightColor
@@ -121,7 +121,7 @@ class MainViewController: UIViewController {
     }
     
     @objc private func joinGameButtonAction() {
-        
+        navigationController?.pushViewController(JoinGameViewController(), animated: true)
     }
 
 
