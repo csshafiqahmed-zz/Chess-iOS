@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .backgroundColor
         
         setupView()
-        addConstaints()
+        addConstraints()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    private func addConstaints() {
+    private func addConstraints() {
         titleLabel.snp.makeConstraints { maker in
             maker.left.right.equalToSuperview()
             maker.top.equalToSuperview().offset(150)
