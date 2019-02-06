@@ -17,6 +17,7 @@
 		109B046F220A547800E15704 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B046E220A547800E15704 /* Color.swift */; };
 		109B0472220A54FA00E15704 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0471220A54FA00E15704 /* UIColorExtensions.swift */; };
 		109B0474220A559E00E15704 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0473220A559E00E15704 /* UIViewExtensions.swift */; };
+		109B0476220A663A00E15704 /* StartNewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0475220A663A00E15704 /* StartNewGameViewController.swift */; };
 		2715A14F089E9D59F764E06B /* Pods_Checkers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E40A372F8F064CCE1029190 /* Pods_Checkers.framework */; };
 		C24A5BE16E5AAC3F7C19FEFC /* Pods_CheckersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6067BF35B5B0D82E2F78B3F /* Pods_CheckersTests.framework */; };
 		DE58A98CB037F230E6945CE3 /* Pods_CheckersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A638FDC2A6F6798354C6F11E /* Pods_CheckersUITests.framework */; };
@@ -57,6 +58,7 @@
 		109B046E220A547800E15704 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		109B0471220A54FA00E15704 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		109B0473220A559E00E15704 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		109B0475220A663A00E15704 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
 		22317028C1C22D62E0848701 /* Pods-Checkers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.release.xcconfig"; sourceTree = "<group>"; };
 		24311ADDF8637758712C8FA0 /* Pods-Checkers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.debug.xcconfig"; sourceTree = "<group>"; };
 		2CADB7BBF203B2592A6BD250 /* Pods-CheckersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersUITests/Pods-CheckersUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				104232312209D715008DC01A /* MainViewController.swift */,
+				109B0475220A663A00E15704 /* StartNewGameViewController.swift */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				109B0474220A559E00E15704 /* UIViewExtensions.swift in Sources */,
 				104232302209D715008DC01A /* AppDelegate.swift in Sources */,
 				109B046F220A547800E15704 /* Color.swift in Sources */,
+				109B0476220A663A00E15704 /* StartNewGameViewController.swift in Sources */,
 				109B0472220A54FA00E15704 /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
