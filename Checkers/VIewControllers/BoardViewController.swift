@@ -53,17 +53,17 @@ class BoardViewController: UIViewController {
         collectionView.showsVerticalScrollIndicator = false
         view.addSubview(collectionView)
 
-        
+
     }
 }
 
 extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        return 8
     }
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 8
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,16 +71,16 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
         let sum = indexPath.section + indexPath.item
         if sum % 2 == 0 {
-            cell.backgroundColor = UIColor(hex: 0x009688)
+            cell.backgroundColor = .boardDark
         } else {
-            cell.backgroundColor = UIColor(hex: 0xE0E0E0)
+            cell.backgroundColor = .boardLight
         }
 
         return cell
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize = boardSize/10.0
+        let cellSize = boardSize/8.0
         return CGSize(width: cellSize, height: cellSize)
     }
 

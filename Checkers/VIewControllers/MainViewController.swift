@@ -26,6 +26,12 @@ class MainViewController: UIViewController {
         
         setupView()
         addConstraints()
+        textFieldDidChange()
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+        tap.numberOfTouchesRequired = 1
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -95,6 +101,7 @@ class MainViewController: UIViewController {
         nameTextField.textColor = .white
         nameTextField.font = UIFont.systemFont(ofSize: 36, weight: .medium)
         nameTextField.textAlignment = .center
+        nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         view.addSubview(nameTextField)
         
         startGameButton = UIButton()
@@ -124,6 +131,13 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(JoinGameViewController(), animated: true)
     }
 
+    @objc private func textFieldDidChange() {
+        // TODO
 
+    }
+
+    @objc private func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 }
 

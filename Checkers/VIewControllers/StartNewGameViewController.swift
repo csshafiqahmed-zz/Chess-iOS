@@ -15,6 +15,9 @@ class StartNewGameViewController: UIViewController {
     private var headerLabel: UILabel!
     private var gameUidLabel: UILabel!
     private var descriptionLabel: UILabel!
+
+    // MARK: Attributes
+    private var gameUid: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,8 @@ class StartNewGameViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .backgroundColor
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.isOpaque = false
+
+        gameUid = generateGameUid()
         
         setupView()
         addConstraints()
@@ -63,7 +68,7 @@ class StartNewGameViewController: UIViewController {
         view.addSubview(headerLabel)
 
         gameUidLabel = UILabel()
-        gameUidLabel.text = "123456"
+        gameUidLabel.text = gameUid
         gameUidLabel.textColor = .highlightColor
         gameUidLabel.textAlignment = .center
         gameUidLabel.font = UIFont.systemFont(ofSize: 42, weight: .bold)
@@ -77,6 +82,14 @@ class StartNewGameViewController: UIViewController {
         descriptionLabel.numberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
         view.addSubview(descriptionLabel)
+    }
+
+    private func generateGameUid() -> String {
+        var result = ""
+        repeat {
+            result = String(format:"%06d", arc4random_uniform(1000000) )
+        } while result.count < 6
+        return result
     }
 
 }
