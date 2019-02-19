@@ -7,6 +7,8 @@ target 'Checkers' do
 
   # Pods for Checkers
   pod 'SnapKit'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 
   target 'CheckersTests' do
