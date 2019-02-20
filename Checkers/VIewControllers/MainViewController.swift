@@ -132,12 +132,15 @@ class MainViewController: UIViewController {
     @objc private func startGameButtonAction() {
         // Set Player1 name
         game.startNewGame(nameTextField.text!)
+        game.setIsPlayer1(true)
         // Create game in firebase
         firebaseGameController.createNewGame()
         navigationController?.pushViewController(StartNewGameViewController(), animated: true)
     }
     
     @objc private func joinGameButtonAction() {
+        game.setPlayer2Name(nameTextField.text!)
+        game.setIsPlayer1(false)
         navigationController?.pushViewController(JoinGameViewController(), animated: true)
     }
 

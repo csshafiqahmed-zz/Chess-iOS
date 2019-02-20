@@ -19,6 +19,7 @@ class StartNewGameViewController: UIViewController {
     // MARK: Attributes
     private var firebaseGameController: FirebaseGameController!
     private var firebaseReference: FirebaseReference!
+    private var game: Game!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class StartNewGameViewController: UIViewController {
 
         self.firebaseGameController = FirebaseGameController()
         self.firebaseReference = FirebaseReference()
+        self.game = Game.getInstance()
         
         setupView()
         addConstraints()
@@ -42,11 +44,11 @@ class StartNewGameViewController: UIViewController {
 
         // Remove the game from Firebase on back press
         if self.isMovingFromParent {
-            firebaseGameController.deleteGameFromFirebase(Game.getInstance().gameUid!)
+            firebaseGameController.deleteGameFromFirebase(game.gameUid!)
         }
 
         // Remove listeners
-        firebaseReference.getGameReference(Game.getInstance().gameUid!).removeAllObservers()
+        firebaseReference.getGameReference(game.gameUid!).removeAllObservers()
     }
 
     private func addConstraints() {
@@ -83,7 +85,7 @@ class StartNewGameViewController: UIViewController {
         view.addSubview(headerLabel)
 
         gameUidLabel = UILabel()
-        gameUidLabel.text = Game.getInstance().gameUid
+        gameUidLabel.text = game.gameUid
         gameUidLabel.textColor = .highlightColor
         gameUidLabel.textAlignment = .center
         gameUidLabel.font = UIFont.systemFont(ofSize: 42, weight: .bold)
@@ -102,8 +104,9 @@ class StartNewGameViewController: UIViewController {
     /// Adds a listeners to the 'player2' child for the current game. When 'player2' is not null navigate to
     /// BoardViewController to start the game
     private func addValueEventListener() {
-        firebaseReference.getGameReference(Game.getInstance().gameUid!).child("player2").observe(.value) { snapshot in
+        firebaseReference.getGameReference(game.gameUid!).child("player2").observe(.value) { snapshot in
             if snapshot.exists() {
+                self.game.refreshGame()
                 self.navigationController?.pushViewController(BoardViewController(), animated: true)
             }
         }

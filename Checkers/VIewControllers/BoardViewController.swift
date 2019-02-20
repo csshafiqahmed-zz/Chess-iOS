@@ -18,6 +18,7 @@ class BoardViewController: UIViewController {
     private var player2CounterLabel: UILabel!
 
     // MARK: Attributes
+    private var game: Game!
     private let boardSize = UIScreen.main.bounds.width - 24
 
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class BoardViewController: UIViewController {
 
         view.backgroundColor = .backgroundColor
         navigationController?.setNavigationBarHidden(true, animated: false)
+        game = Game.getInstance()
 
         setupView()
         addConstraints()

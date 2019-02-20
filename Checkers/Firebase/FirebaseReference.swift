@@ -15,8 +15,13 @@ public class FirebaseReference {
         self.databaseReference = Database.database().reference()
     }
 
+    /// Reference to the head of GAME node
+    public func gameReference() -> DatabaseReference {
+        return databaseReference.child(FirebaseKey.GAME)
+    }
+
     /// Reference to a game given it gameUid
     public func getGameReference(_ gameUid: String) -> DatabaseReference {
-        return databaseReference.child(FirebaseKey.GAME).child(gameUid)
+        return gameReference().child(gameUid)
     }
 }
