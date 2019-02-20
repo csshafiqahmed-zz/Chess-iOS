@@ -14,8 +14,11 @@ public class Game {
     public private(set) var player2Name: String?
     public private(set) var isPlayer1Turn: Bool = true
     public private(set) var isPlayer1: Bool = true
+    public private(set) var board: Board!
 
-    private init() { }
+    private init() {
+        board = Board()
+    }
 
     public static func getInstance() -> Game {
         if game == nil {
