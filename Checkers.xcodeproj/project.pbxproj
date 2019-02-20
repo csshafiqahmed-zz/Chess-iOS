@@ -20,7 +20,12 @@
 		109B0474220A559E00E15704 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0473220A559E00E15704 /* UIViewExtensions.swift */; };
 		109B0476220A663A00E15704 /* StartNewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0475220A663A00E15704 /* StartNewGameViewController.swift */; };
 		192E40721500702D377D2422 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4149D4E7FAF9749C8040 /* JoinGameViewController.swift */; };
+		192E411B35D0E47A70681107 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E44D741B9994C0A329997 /* FirebaseReference.swift */; };
+		192E43407D16F99FC16053A0 /* FirebaseGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4F91D0D3AB3D64DF5037 /* FirebaseGameController.swift */; };
+		192E4379FDB3F0A352A2B477 /* CurrentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E424B178E077A20BD80BD /* CurrentGame.swift */; };
+		192E47D6A611BBEFF7E912FC /* FirebaseKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E46CBCB7DC9FBBC67EA8B /* FirebaseKey.swift */; };
 		192E48FE159BD7188BADDB78 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E425995CCF53F4C7F6C6F /* BoardViewController.swift */; };
+		192E4B922AAF8F0E0AB16F44 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E48F70C179717CE76CB8A /* Util.swift */; };
 		2715A14F089E9D59F764E06B /* Pods_Checkers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E40A372F8F064CCE1029190 /* Pods_Checkers.framework */; };
 		C24A5BE16E5AAC3F7C19FEFC /* Pods_CheckersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6067BF35B5B0D82E2F78B3F /* Pods_CheckersTests.framework */; };
 		DE58A98CB037F230E6945CE3 /* Pods_CheckersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A638FDC2A6F6798354C6F11E /* Pods_CheckersUITests.framework */; };
@@ -64,7 +69,12 @@
 		109B0473220A559E00E15704 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		109B0475220A663A00E15704 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
 		192E4149D4E7FAF9749C8040 /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
+		192E424B178E077A20BD80BD /* CurrentGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentGame.swift; sourceTree = "<group>"; };
 		192E425995CCF53F4C7F6C6F /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
+		192E44D741B9994C0A329997 /* FirebaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		192E46CBCB7DC9FBBC67EA8B /* FirebaseKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseKey.swift; sourceTree = "<group>"; };
+		192E48F70C179717CE76CB8A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		192E4F91D0D3AB3D64DF5037 /* FirebaseGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseGameController.swift; sourceTree = "<group>"; };
 		22317028C1C22D62E0848701 /* Pods-Checkers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.release.xcconfig"; sourceTree = "<group>"; };
 		24311ADDF8637758712C8FA0 /* Pods-Checkers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.debug.xcconfig"; sourceTree = "<group>"; };
 		2CADB7BBF203B2592A6BD250 /* Pods-CheckersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersUITests/Pods-CheckersUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +145,8 @@
 				104232362209D716008DC01A /* Assets.xcassets */,
 				1042323B2209D716008DC01A /* Info.plist */,
 				105A397C221CA4FF00753459 /* GoogleService-Info.plist */,
+				192E420755E5C33DEE270122 /* Firebase */,
+				192E4CA6BB438C47316C8E65 /* Type */,
 			);
 			path = Checkers;
 			sourceTree = "<group>";
@@ -182,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				109B046E220A547800E15704 /* Color.swift */,
+				192E48F70C179717CE76CB8A /* Util.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -193,6 +206,24 @@
 				109B0473220A559E00E15704 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		192E420755E5C33DEE270122 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				192E4F91D0D3AB3D64DF5037 /* FirebaseGameController.swift */,
+				192E44D741B9994C0A329997 /* FirebaseReference.swift */,
+				192E46CBCB7DC9FBBC67EA8B /* FirebaseKey.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		192E4CA6BB438C47316C8E65 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				192E424B178E077A20BD80BD /* CurrentGame.swift */,
+			);
+			path = Type;
 			sourceTree = "<group>";
 		};
 		8BE0E6748DF3483352896678 /* Frameworks */ = {
@@ -459,6 +490,11 @@
 				109B0472220A54FA00E15704 /* UIColorExtensions.swift in Sources */,
 				192E40721500702D377D2422 /* JoinGameViewController.swift in Sources */,
 				192E48FE159BD7188BADDB78 /* BoardViewController.swift in Sources */,
+				192E43407D16F99FC16053A0 /* FirebaseGameController.swift in Sources */,
+				192E411B35D0E47A70681107 /* FirebaseReference.swift in Sources */,
+				192E47D6A611BBEFF7E912FC /* FirebaseKey.swift in Sources */,
+				192E4379FDB3F0A352A2B477 /* CurrentGame.swift in Sources */,
+				192E4B922AAF8F0E0AB16F44 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

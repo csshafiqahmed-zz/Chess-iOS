@@ -18,11 +18,17 @@ class MainViewController: UIViewController {
     private var joinGameButton: UIButton!
     private var nameTextField: UITextField!
 
+    // MARK: Attributes
+    private var game: Game!
+    private var firebaseGameController: FirebaseGameController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         view.backgroundColor = .backgroundColor
+        game = Game.getInstance()
+        firebaseGameController = FirebaseGameController()
         
         setupView()
         addConstraints()
@@ -124,6 +130,10 @@ class MainViewController: UIViewController {
     }
     
     @objc private func startGameButtonAction() {
+        // Set Player1 name
+        game.startNewGame(nameTextField.text!)
+        // Create game in firebase
+        firebaseGameController.createNewGame()
         navigationController?.pushViewController(StartNewGameViewController(), animated: true)
     }
     
@@ -132,7 +142,7 @@ class MainViewController: UIViewController {
     }
 
     @objc private func textFieldDidChange() {
-        // TODO
+        // TODO name validation checks
 
     }
 

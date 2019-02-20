@@ -17,7 +17,8 @@ class StartNewGameViewController: UIViewController {
     private var descriptionLabel: UILabel!
 
     // MARK: Attributes
-    private var gameUid: String = ""
+    private var firebaseGameController: FirebaseGameController!
+    private var firebaseReference: FirebaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +29,26 @@ class StartNewGameViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.isOpaque = false
 
-        gameUid = generateGameUid()
+        self.firebaseGameController = FirebaseGameController()
+        self.firebaseReference = FirebaseReference()
         
         setupView()
         addConstraints()
+        addValueEventListener()
     }
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Remove the game from Firebase on back press
+        if self.isMovingFromParent {
+            firebaseGameController.deleteGameFromFirebase(Game.getInstance().gameUid!)
+        }
+
+        // Remove listeners
+        firebaseReference.getGameReference(Game.getInstance().gameUid!).removeAllObservers()
+    }
+
     private func addConstraints() {
         headerLabel.snp.makeConstraints { maker in
             maker.left.equalToSuperview().offset(32)
@@ -68,7 +83,7 @@ class StartNewGameViewController: UIViewController {
         view.addSubview(headerLabel)
 
         gameUidLabel = UILabel()
-        gameUidLabel.text = gameUid
+        gameUidLabel.text = Game.getInstance().gameUid
         gameUidLabel.textColor = .highlightColor
         gameUidLabel.textAlignment = .center
         gameUidLabel.font = UIFont.systemFont(ofSize: 42, weight: .bold)
@@ -84,12 +99,14 @@ class StartNewGameViewController: UIViewController {
         view.addSubview(descriptionLabel)
     }
 
-    private func generateGameUid() -> String {
-        var result = ""
-        repeat {
-            result = String(format:"%06d", arc4random_uniform(1000000) )
-        } while result.count < 6
-        return result
+    /// Adds a listeners to the 'player2' child for the current game. When 'player2' is not null navigate to
+    /// BoardViewController to start the game
+    private func addValueEventListener() {
+        firebaseReference.getGameReference(Game.getInstance().gameUid!).child("player2").observe(.value) { snapshot in
+            if snapshot.exists() {
+                self.navigationController?.pushViewController(BoardViewController(), animated: true)
+            }
+        }
     }
 
 }
