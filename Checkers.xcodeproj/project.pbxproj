@@ -27,6 +27,7 @@
 		192E4379FDB3F0A352A2B477 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E424B178E077A20BD80BD /* Game.swift */; };
 		192E4416C5D7AC8EAE137947 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E45BCDAD2AFEC8DF40697 /* BoardCollectionViewCell.swift */; };
 		192E4468ABCFF3B58601B198 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4199625EDA49553A5F40 /* Tile.swift */; };
+		192E4663100BB196DB44BE41 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E412A21529BB67EC8228A /* Message.swift */; };
 		192E4701CCFD8E3697FDB094 /* FirebaseFetchGameCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E42463598790A62A525DA /* FirebaseFetchGameCompletion.swift */; };
 		192E47D6A611BBEFF7E912FC /* FirebaseKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E46CBCB7DC9FBBC67EA8B /* FirebaseKey.swift */; };
 		192E48FE159BD7188BADDB78 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E425995CCF53F4C7F6C6F /* BoardViewController.swift */; };
@@ -77,6 +78,7 @@
 		109B0473220A559E00E15704 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		109B0475220A663A00E15704 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
 		192E40FA418D482A9D1954F9 /* PieceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
+		192E412A21529BB67EC8228A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		192E4149D4E7FAF9749C8040 /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		192E416F5D579A3AC29A667E /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		192E4199625EDA49553A5F40 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				192E40FA418D482A9D1954F9 /* PieceType.swift */,
 				192E416F5D579A3AC29A667E /* Board.swift */,
 				192E4199625EDA49553A5F40 /* Tile.swift */,
+				192E412A21529BB67EC8228A /* Message.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				192E4468ABCFF3B58601B198 /* Tile.swift in Sources */,
 				192E4416C5D7AC8EAE137947 /* BoardCollectionViewCell.swift in Sources */,
 				192E4D362E58FFA63727D6F4 /* Icon.swift in Sources */,
+				192E4663100BB196DB44BE41 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

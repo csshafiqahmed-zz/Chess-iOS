@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     private var startGameButton: UIButton!
     private var joinGameButton: UIButton!
     private var nameTextField: UITextField!
+    private var nameErrorLabel: UILabel!
 
     // MARK: Attributes
     private var game: Game!
@@ -70,7 +71,13 @@ class MainViewController: UIViewController {
             maker.top.equalTo(versionLabel.snp.bottom).offset(54)
             maker.height.equalTo(52)
         }
-        
+
+        nameErrorLabel.snp.makeConstraints { maker in
+            maker.left.right.equalToSuperview()
+            maker.top.equalTo(nameTextField.snp.bottom).offset(16)
+            maker.height.equalTo(nameErrorLabel.intrinsicContentSize.height)
+        }
+
         startGameButton.snp.makeConstraints { maker in
             maker.top.equalTo(self.view.snp.centerY)
             maker.left.equalToSuperview().offset(32)
@@ -127,6 +134,16 @@ class MainViewController: UIViewController {
         joinGameButton.addShadow()
         joinGameButton.addTarget(self, action: #selector(joinGameButtonAction), for: .touchUpInside)
         view.addSubview(joinGameButton)
+
+        nameErrorLabel = UILabel()
+        nameErrorLabel.text = "Name should be greater then 1 letter"
+        nameErrorLabel.textColor = .red
+        nameErrorLabel.textAlignment = .center
+        nameErrorLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        nameErrorLabel.numberOfLines = 2
+        nameErrorLabel.lineBreakMode = .byWordWrapping
+        nameErrorLabel.isHidden = true
+        view.addSubview(nameErrorLabel)
     }
     
     @objc private func startGameButtonAction() {
@@ -145,8 +162,11 @@ class MainViewController: UIViewController {
     }
 
     @objc private func textFieldDidChange() {
-        // TODO name validation checks
-
+//        startGameButton.isEnabled = (nameTextField.text?.count)! > 1
+//        joinGameButton.isEnabled = (nameTextField.text?.count)! > 1
+//        nameErrorLabel.isHidden = (nameTextField.text?.count)! > 1
+//        startGameButton.backgroundColor = (startGameButton.isEnabled) ? .highlightColor : .buttonDisabled
+//        joinGameButton.backgroundColor = (joinGameButton.isEnabled) ? .highlightColor : .buttonDisabled
     }
 
     @objc private func dismissKeyboard(_ sender: UITapGestureRecognizer) {

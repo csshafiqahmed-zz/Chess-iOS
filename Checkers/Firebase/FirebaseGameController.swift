@@ -20,7 +20,9 @@ public class FirebaseGameController {
     public func createNewGame() {
         let data: [String: Any?] = [FirebaseKey.GAME_PLAYER1: game.player1Name,
                                     FirebaseKey.GAME_PLAYER2: game.player2Name,
-                                    FirebaseKey.GAME_TURN: game.isPlayer1Turn]
+                                    FirebaseKey.GAME_TURN: game.isPlayer1Turn,
+                                    FirebaseKey.BOARD: game.board.convertToFirebase()]
+
 
         firebaseReference.getGameReference(game.gameUid!).setValue(data)
     }
@@ -35,10 +37,10 @@ public class FirebaseGameController {
         let gameReference = firebaseReference.getGameReference(gameUid).child(FirebaseKey.GAME_PLAYER2)
         gameReference.observeSingleEvent(of: .value) { (gameSnapshot: DataSnapshot) in
             if gameSnapshot.exists() {
-                completion(.success)
+                completion(.gameInProgress)
                 return
             }
-            completion(.failure)
+            completion(.gameWaitingForPlayer2)
         }
     }
     

@@ -27,7 +27,7 @@ public class Game {
         return game
     }
 
-    public func refreshGame() {
+    public func refreshGame(completion: @escaping (() -> Void)) {
         let firebaseGameController = FirebaseGameController()
         firebaseGameController.fetchGame(gameUid!) { firebaseFetchGameCompletion in
             switch firebaseFetchGameCompletion {
@@ -36,9 +36,11 @@ public class Game {
                 self.player1Name = gameSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER1).value as? String
                 self.player2Name = gameSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER2).value as? String
                 self.isPlayer1Turn = gameSnapshot.childSnapshot(forPath: FirebaseKey.GAME_TURN).value as! Bool
+                self.board = Board(snapshot: gameSnapshot.childSnapshot(forPath: FirebaseKey.BOARD))
             case .failure:
                 print("Failed to refresh game")
             }
+            completion()
         }
     }
 

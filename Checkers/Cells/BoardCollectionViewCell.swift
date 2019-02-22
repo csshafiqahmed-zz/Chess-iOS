@@ -40,6 +40,7 @@ class BoardCollectionViewCell: UICollectionViewCell {
         if let tile = tile {
             piece.setPieceType((tile.isPlayer1) ? .RED : .BLUE)
             piece.isHidden = false
+            piece.toggleKingImage(tile.isKing)
         } else {
             piece.isHidden = true
         }

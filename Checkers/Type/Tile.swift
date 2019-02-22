@@ -19,6 +19,15 @@ public class Tile {
         self.isPlayer1 = isPlayer1
     }
 
+    init(firebaseKey: String, firebaseValue: String) {
+        let valueArray = Array(firebaseValue)
+        let splitString = firebaseKey.split(separator: ",")
+        self.row = Int(splitString[0])
+        self.col = Int(splitString[1])
+        self.isKing = valueArray.first == "K"
+        self.isPlayer1 = valueArray.last == "1"
+    }
+
     public func updateTile(row: Int, col: Int, isKing: Bool, isPlayer1: Bool) {
         self.row = row
         self.col = col

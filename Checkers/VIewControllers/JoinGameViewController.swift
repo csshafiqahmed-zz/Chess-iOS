@@ -101,9 +101,9 @@ class JoinGameViewController: UIViewController {
             textField.resignFirstResponder()
             firebaseGameController.isGameUidValid(textField.text!) { firebaseJoinGameCompletion in
                 switch firebaseJoinGameCompletion {
-                case .success:
+                case .gameWaitingForPlayer2:
                     self.joinGame()
-                case .failure:
+                case .gameInProgress:
                     self.errorLabel.isHidden = false
                     self.textField.isUserInteractionEnabled = true
                 }
@@ -114,7 +114,6 @@ class JoinGameViewController: UIViewController {
     private func joinGame() {
         firebaseGameController.pushPlayer2ToFirebase(textField.text!)
         game.setGameUid(textField.text)
-        game.refreshGame()
         self.navigationController?.pushViewController(BoardViewController(), animated: true)
     }
 }

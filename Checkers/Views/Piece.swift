@@ -76,6 +76,7 @@ class Piece: UIView {
         crownImageView.image = Icon.crown_24
         crownImageView.tintColor = .white
         crownImageView.contentMode = .scaleAspectFit
+        crownImageView.isHidden = true
         view3.addSubview(crownImageView)
     }
 
@@ -84,5 +85,9 @@ class Piece: UIView {
         view1.backgroundColor = pieceType.color1
         view2.backgroundColor = pieceType.color2
         view3.backgroundColor = pieceType.color3
+    }
+
+    public func toggleKingImage(_ isKing: Bool) {
+        crownImageView.isHidden = !isKing
     }
 }

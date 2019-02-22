@@ -48,7 +48,7 @@ class StartNewGameViewController: UIViewController {
         }
 
         // Remove listeners
-        firebaseReference.getGameReference(game.gameUid!).removeAllObservers()
+        firebaseReference.getGameReference(game.gameUid!).child(FirebaseKey.GAME_PLAYER2).removeAllObservers()
     }
 
     private func addConstraints() {
@@ -104,9 +104,8 @@ class StartNewGameViewController: UIViewController {
     /// Adds a listeners to the 'player2' child for the current game. When 'player2' is not null navigate to
     /// BoardViewController to start the game
     private func addValueEventListener() {
-        firebaseReference.getGameReference(game.gameUid!).child("player2").observe(.value) { snapshot in
+        firebaseReference.getGameReference(game.gameUid!).child(FirebaseKey.GAME_PLAYER2).observe(.value) { snapshot in
             if snapshot.exists() {
-                self.game.refreshGame()
                 self.navigationController?.pushViewController(BoardViewController(), animated: true)
             }
         }
