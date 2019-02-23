@@ -23,6 +23,7 @@ class BoardViewController: UIViewController {
 
     // MARK: Attributes
     private var game: Game!
+    private var validMoves: [IndexPath]!
     private let boardSize = UIScreen.main.bounds.width - 24
 
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class BoardViewController: UIViewController {
         view.backgroundColor = .backgroundColor
         navigationController?.setNavigationBarHidden(true, animated: false)
         game = Game.getInstance()
+        validMoves = [IndexPath]()
 
         setupView()
         addConstraints()
@@ -220,8 +222,18 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
 
         cell.refreshCell(game.board.getTileForRowCol(row: indexPath.item, col: indexPath.section))
+        if validMoves.contains(indexPath) {
+            cell.backgroundColor = .white
+        }
 
         return cell
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if game.canPlayerSelectCell(row: indexPath.item, col: indexPath.section) {
+            validMoves = game.getPossibleMovesForPiece(row: indexPath.item, col: indexPath.section)
+            collectionView.reloadData()
+        }
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

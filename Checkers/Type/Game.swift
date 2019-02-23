@@ -18,6 +18,7 @@ public class Game {
 
     private init() {
         board = Board()
+        gameUid = "848608"
     }
 
     public static func getInstance() -> Game {
@@ -75,6 +76,62 @@ public class Game {
 
     public func togglePlayersTurn() {
         isPlayer1Turn = !isPlayer1Turn
+    }
+    
+    public func canPlayerSelectCell(row: Int, col: Int) -> Bool {
+        if let tile = board.getTileForRowCol(row: row, col: col) {
+            return isPlayer1 == tile.isPlayer1 && isPlayer1Turn == isPlayer1
+        }
+        return false
+    }
+
+    public func getPossibleMovesForPiece(row: Int, col: Int) -> [IndexPath] {
+        var validMoves = [IndexPath]()
+        if let tile = board.getTileForRowCol(row: row, col: col) {
+            let possibleMoves = getPossibleMoves(tile)
+            for move in possibleMoves {
+                let moveTile = board.getTileForRowCol(row: move.row, col: move.col)
+                if moveTile == nil  {
+                    validMoves.append(IndexPath(item: move.row, section: move.col))
+                } else if moveTile?.isPlayer1 != isPlayer1 {
+                    // Check if opponent piece can be killed
+                    let newRow = ((row - move.row) * -1) + move.row
+                    let newCol = ((col - move.col) * -1) + move.col
+                    if board.isRowColValid(row: newRow, col: newCol) && board.getTileForRowCol(row: newRow, col: newCol) == nil {
+                        validMoves.append(IndexPath(item: newRow, section: newCol))
+                    }
+                }
+            }
+        }
+        return validMoves
+    }
+    
+    private func getPossibleMoves(_ tile: Tile) -> [(row: Int, col: Int)] {
+        var possibleMoves = [(row: Int, col: Int)]()
+        let row = tile.row!
+        let col = tile.col!
+        if tile.isKing {
+            // Move down and left
+            if board.isRowColValid(row: row+1, col: col-1) {
+                possibleMoves.append((row: row+1, col: col-1))
+            }
+
+            // Move down and right
+            if board.isRowColValid(row: row+1, col: col+1) {
+                possibleMoves.append((row: row+1, col: col+1))
+            }
+        }
+
+        // Move up and left
+        if board.isRowColValid(row: row-1, col: col-1) {
+            possibleMoves.append((row: row-1, col: col-1))
+        }
+
+        // Move up and right
+        if board.isRowColValid(row: row-1, col: col+1) {
+            possibleMoves.append((row: row-1, col: col+1))
+        }
+        return possibleMoves
     }
 
 }

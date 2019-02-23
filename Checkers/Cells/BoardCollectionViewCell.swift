@@ -53,4 +53,9 @@ class BoardCollectionViewCell: UICollectionViewCell {
     public func setPieceIsHidden(_ isHidden: Bool) {
         piece.isHidden = isHidden
     }
+    
+    public func highlightCell() {
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.white.cgColor
+    }
 }

@@ -63,4 +63,8 @@ public class Board {
         }
         return (tile.isPlayer1) ? FirebaseKey.PLAYER1_PIECE : FirebaseKey.PLAYER2_PIECE
     }
+    
+    public func isRowColValid(row: Int, col: Int) -> Bool {
+        return row >= 0 && row < 8 && col >= 0 && col < 8
+    }
 }
