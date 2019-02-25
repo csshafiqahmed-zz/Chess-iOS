@@ -95,7 +95,7 @@ class BoardViewController: UIViewController {
             maker.centerX.equalTo(player1Piece.snp.centerX)
             maker.top.equalTo(player1Piece.snp.bottom).offset(8)
             maker.height.equalTo(player1CounterLabel.intrinsicContentSize.height)
-            maker.width.equalTo(player1CounterLabel.intrinsicContentSize.width)
+            maker.width.equalTo(50)
         }
 
         player2Piece.snp.makeConstraints { maker in
@@ -115,7 +115,7 @@ class BoardViewController: UIViewController {
             maker.centerX.equalTo(player2Piece.snp.centerX)
             maker.top.equalTo(player2Piece.snp.bottom).offset(8)
             maker.height.equalTo(player2CounterLabel.intrinsicContentSize.height)
-            maker.width.equalTo(player2CounterLabel.intrinsicContentSize.width)
+            maker.width.equalTo(50)
         }
 
         turnLabel.snp.makeConstraints { maker in
@@ -229,8 +229,36 @@ class BoardViewController: UIViewController {
     private func refreshView() {
         player1Label.text = game.player1Name
         player2Label.text = self.game.player2Name
-        turnLabel.text = game.isPlayer1 ? Message.YOUR_TURN : Message.OPPONENT_TURN
+        turnLabel.text = game.isPlayer1 == game.isPlayer1Turn ? Message.YOUR_TURN : Message.OPPONENT_TURN
+        player1CounterLabel.text = String(game.board.getPlayer1KillCount())
+        player2CounterLabel.text = String(game.board.getPlayer2KillCount())
         collectionView.reloadData()
+
+        switch game.didAPlayerWin() {
+        case .PLAYER1:
+            presentGameOverAlertDialog(true)
+            collectionView.isUserInteractionEnabled = false
+        case .PLAYER2:
+            presentGameOverAlertDialog(false)
+            collectionView.isUserInteractionEnabled = false
+        case .TIE:
+            ()
+        case .GAME_IN_PROGRESS:
+            ()
+        }
+    }
+
+    private func presentGameOverAlertDialog(_ didPlayer1Win: Bool) {
+        let message = didPlayer1Win == game.isPlayer1 ? Message.YOU_WIN_MESSAGE : Message.OPPONENT_WIN_MESSAGE
+        let alertDialog = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
+
+        alertDialog.addAction(UIAlertAction(title: "Ok", style: .default) { action in
+            self.firebaseGameController.deleteGameFromFirebase(self.game.gameUid!)
+            self.game.resetGame()
+            self.navigationController?.popToRootViewController(animated: false)
+        })
+
+        navigationController?.present(alertDialog, animated: true)
     }
 }
 

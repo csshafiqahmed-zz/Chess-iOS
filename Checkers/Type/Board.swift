@@ -100,4 +100,24 @@ public class Board {
             piece.promotePiece()
         }
     }
+
+    public func getPlayer1KillCount() -> Int {
+        var count = 0
+        pieces.forEach { key, value in
+            if !value.isPlayer1 {
+                count += 1
+            }
+        }
+        return 12 - count
+    }
+
+    public func getPlayer2KillCount() -> Int {
+        var count = 0
+        pieces.forEach { key, value in
+            if value.isPlayer1 {
+                count += 1
+            }
+        }
+        return 12 - count
+    }
 }

@@ -43,13 +43,14 @@ class StartNewGameViewController: UIViewController {
         super.viewWillDisappear(animated)
 
         // Remove the game from Firebase on back press
+        let gameUid = game.gameUid
         if self.isMovingFromParent {
             firebaseGameController.deleteGameFromFirebase(game.gameUid!)
             game.resetGame()
         }
 
         // Remove listeners
-        firebaseReference.getGameReference(game.gameUid!).child(FirebaseKey.GAME_PLAYER2).removeAllObservers()
+        firebaseReference.getGameReference(gameUid!).child(FirebaseKey.GAME_PLAYER2).removeAllObservers()
     }
 
     private func addConstraints() {

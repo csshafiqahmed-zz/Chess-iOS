@@ -177,6 +177,14 @@ public class Game {
         }
     }
 
-
+    public func didAPlayerWin() -> Win {
+        if board.getPlayer1KillCount() == 12 {
+            return .PLAYER1
+        } else if board.getPlayer2KillCount() == 12 {
+            return .PLAYER2
+        } else {
+            return .GAME_IN_PROGRESS
+        }
+    }
 
 }

@@ -24,6 +24,7 @@
 		192E419E229B912C0C8892EC /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E40FA418D482A9D1954F9 /* PieceType.swift */; };
 		192E424358C02C73F49BFC0F /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E416F5D579A3AC29A667E /* Board.swift */; };
 		192E43407D16F99FC16053A0 /* FirebaseGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4F91D0D3AB3D64DF5037 /* FirebaseGameController.swift */; };
+		192E434C1D9F21C2522AE1A9 /* Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E457531E2D0A03F0A0DFE /* Win.swift */; };
 		192E4379FDB3F0A352A2B477 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E424B178E077A20BD80BD /* Game.swift */; };
 		192E4416C5D7AC8EAE137947 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E45BCDAD2AFEC8DF40697 /* BoardCollectionViewCell.swift */; };
 		192E441D1FA0BB98AB196781 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4EF38A7084388ADF9FFC /* Move.swift */; };
@@ -88,6 +89,7 @@
 		192E425995CCF53F4C7F6C6F /* BoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		192E43365ACA329E40529942 /* Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		192E44D741B9994C0A329997 /* FirebaseReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
+		192E457531E2D0A03F0A0DFE /* Win.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Win.swift; sourceTree = "<group>"; };
 		192E45BCDAD2AFEC8DF40697 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
 		192E46B1040AFA6E3484CEBE /* FirebaseJoinGameCompletion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseJoinGameCompletion.swift; sourceTree = "<group>"; };
 		192E46CBCB7DC9FBBC67EA8B /* FirebaseKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseKey.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				192E4199625EDA49553A5F40 /* Tile.swift */,
 				192E412A21529BB67EC8228A /* Message.swift */,
 				192E4EF38A7084388ADF9FFC /* Move.swift */,
+				192E457531E2D0A03F0A0DFE /* Win.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				192E4D362E58FFA63727D6F4 /* Icon.swift in Sources */,
 				192E4663100BB196DB44BE41 /* Message.swift in Sources */,
 				192E441D1FA0BB98AB196781 /* Move.swift in Sources */,
+				192E434C1D9F21C2522AE1A9 /* Win.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
