@@ -90,4 +90,10 @@ class Piece: UIView {
     public func toggleKingImage(_ isKing: Bool) {
         crownImageView.isHidden = !isKing
     }
+
+    public func highlightPiece() {
+        view1.backgroundColor = pieceType.color1Highlight
+        view2.backgroundColor = pieceType.color2Highlight
+        view3.backgroundColor = pieceType.color3Highlight
+    }
 }

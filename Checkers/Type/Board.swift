@@ -19,7 +19,11 @@ public class Board {
     init(snapshot: DataSnapshot) {
         pieces = [String: Tile]()
         for child in snapshot.children.allObjects as! [DataSnapshot] {
-            pieces[child.key] = Tile(firebaseKey: child.key, firebaseValue: child.value as! String)
+            var key = child.key
+            if !Game.getInstance().isPlayer1 {
+                key = convertIndexForPlayer2(key)
+            }
+            pieces[key] = Tile(firebaseKey: key, firebaseValue: child.value as! String)
         }
     }
 
@@ -52,7 +56,11 @@ public class Board {
     public func convertToFirebase() -> [String: String] {
         var data = [String: String]()
         pieces.forEach { key, value in
-            data[key] = getValueString(value)
+            var pieceKey = key
+            if !Game.getInstance().isPlayer1 {
+                pieceKey = convertIndexForPlayer2(pieceKey)
+            }
+            data[pieceKey] = getValueString(value)
         }
         return data
     }
@@ -66,5 +74,20 @@ public class Board {
     
     public func isRowColValid(row: Int, col: Int) -> Bool {
         return row >= 0 && row < 8 && col >= 0 && col < 8
+    }
+
+    public func movePiece(fromKey: String, toTile: Tile) {
+        pieces.removeValue(forKey: fromKey)
+        let key = "\(toTile.row!),\(toTile.col!)"
+        pieces[key] = toTile
+    }
+
+    private func convertIndexForPlayer2(_ key: String) -> String {
+        let keyArray = key.split(separator: ",")
+        let row = Int(keyArray[0])
+        let col = Int(keyArray[1])
+        let player2Row = 8 - row! - 1
+        let player2Col = 8 - col! - 1
+        return "\(player2Row),\(player2Col)"
     }
 }

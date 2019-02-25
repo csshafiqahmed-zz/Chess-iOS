@@ -112,8 +112,8 @@ class JoinGameViewController: UIViewController {
     }
 
     private func joinGame() {
-        firebaseGameController.pushPlayer2ToFirebase(textField.text!)
         game.setGameUid(textField.text)
+        firebaseGameController.pushPlayer2ToFirebase(textField.text!)
         self.navigationController?.pushViewController(BoardViewController(), animated: true)
     }
 }

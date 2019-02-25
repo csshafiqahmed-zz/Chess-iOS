@@ -45,6 +45,7 @@ class StartNewGameViewController: UIViewController {
         // Remove the game from Firebase on back press
         if self.isMovingFromParent {
             firebaseGameController.deleteGameFromFirebase(game.gameUid!)
+            game.resetGame()
         }
 
         // Remove listeners

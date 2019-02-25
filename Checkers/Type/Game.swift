@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 public class Game {
 
@@ -18,7 +19,7 @@ public class Game {
 
     private init() {
         board = Board()
-        gameUid = "848608"
+//        gameUid = "386667"
     }
 
     public static func getInstance() -> Game {
@@ -26,6 +27,14 @@ public class Game {
             game = Game()
         }
         return game
+    }
+
+    public func refreshGame(dataSnapshot: DataSnapshot) {
+        gameUid = dataSnapshot.key
+        player1Name = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER1).value as? String
+        player2Name = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER2).value as? String
+        isPlayer1Turn = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_TURN).value as! Bool
+        board = Board(snapshot: dataSnapshot.childSnapshot(forPath: FirebaseKey.BOARD))
     }
 
     public func refreshGame(completion: @escaping (() -> Void)) {
@@ -132,6 +141,15 @@ public class Game {
             possibleMoves.append((row: row-1, col: col+1))
         }
         return possibleMoves
+    }
+
+    public func movePiece(fromRow: Int, fromCol: Int, toRow: Int, toCol: Int) {
+        if let tile = board.getTileForRowCol(row: fromRow, col: fromCol) {
+            let newTile = Tile(row: toRow, col: toCol, isKing: tile.isKing, isPlayer1: tile.isPlayer1)
+            board.movePiece(fromKey: "\(fromRow),\(fromCol)", toTile: newTile)
+            let firebaseController = FirebaseGameController()
+            firebaseController.pushGame()
+        }
     }
 
 }

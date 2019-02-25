@@ -54,7 +54,17 @@ public class FirebaseGameController {
             }
             completion(.failure)
         }
-    } 
+    }
+
+    public func pushGame() {
+        let data: [String: Any?] = [FirebaseKey.GAME_PLAYER1: game.player1Name,
+                                    FirebaseKey.GAME_PLAYER2: game.player2Name,
+                                    FirebaseKey.GAME_TURN: !game.isPlayer1Turn,
+                                    FirebaseKey.BOARD: game.board.convertToFirebase()]
+
+
+        firebaseReference.getGameReference(game.gameUid!).setValue(data)
+    }
     
     /// Set player 2 name in Firebase
     public func pushPlayer2ToFirebase(_ gameUid: String) {

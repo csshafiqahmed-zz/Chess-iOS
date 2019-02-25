@@ -35,4 +35,33 @@ public enum PieceType {
             return .bluePiece3
         }
     }
+
+    var color1Highlight: UIColor {
+        switch self {
+        case .RED:
+            return .redPiece1Highlight
+        case .BLUE:
+            return .bluePiece1Highlight
+        }
+    }
+
+    var color2Highlight: UIColor {
+        switch self {
+        case .RED:
+            return .redPiece2Highlight
+        case .BLUE:
+            return .bluePiece2Highlight
+        }
+    }
+
+    var color3Highlight: UIColor {
+        switch self {
+        case .RED:
+            return .redPiece3Highlight
+        case .BLUE:
+            return .bluePiece3Highlight
+        }
+    }
+
+
 }

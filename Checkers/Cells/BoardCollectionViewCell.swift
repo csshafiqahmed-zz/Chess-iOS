@@ -41,8 +41,10 @@ class BoardCollectionViewCell: UICollectionViewCell {
             piece.setPieceType((tile.isPlayer1) ? .RED : .BLUE)
             piece.isHidden = false
             piece.toggleKingImage(tile.isKing)
+            piece.alpha = 1.0
         } else {
             piece.isHidden = true
+            piece.setPieceType((Game.getInstance().isPlayer1Turn) ? .RED : .BLUE)
         }
     }
 
@@ -55,7 +57,11 @@ class BoardCollectionViewCell: UICollectionViewCell {
     }
     
     public func highlightCell() {
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.white.cgColor
+        piece.isHidden = false
+        piece.alpha = 0.3
+    }
+    
+    public func highlightPiece() {
+        piece.highlightPiece()
     }
 }

@@ -22,7 +22,10 @@ class BoardViewController: UIViewController {
     private var menuButton: UIButton!
 
     // MARK: Attributes
+    private var firebaseGameController: FirebaseGameController!
+    private var firebaseReference: FirebaseReference!
     private var game: Game!
+    private var selectedIndexPath: IndexPath?
     private var validMoves: [IndexPath]!
     private let boardSize = UIScreen.main.bounds.width - 24
 
@@ -31,6 +34,8 @@ class BoardViewController: UIViewController {
 
         view.backgroundColor = .backgroundColor
         navigationController?.setNavigationBarHidden(true, animated: false)
+        firebaseGameController = FirebaseGameController()
+        firebaseReference = FirebaseReference()
         game = Game.getInstance()
         validMoves = [IndexPath]()
 
@@ -38,6 +43,12 @@ class BoardViewController: UIViewController {
         addConstraints()
 
         refreshGameState()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        addValueEventListener()
     }
 
     private func addConstraints() {
@@ -200,6 +211,22 @@ class BoardViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    
+    private func isCellInValidMoves(_ indexPath: IndexPath) -> Bool {
+        for index in validMoves where index.item == indexPath.item && index.section == indexPath.section {
+            return true
+        }
+        return false
+    }
+
+    private func addValueEventListener() {
+        firebaseReference.getGameReference(game.gameUid!).observe(.value) { snapshot in
+            if snapshot.exists() {
+                self.game.refreshGame(dataSnapshot: snapshot)
+                self.collectionView.reloadData()
+            }
+        }
+    }
 }
 
 extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -222,8 +249,13 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
 
         cell.refreshCell(game.board.getTileForRowCol(row: indexPath.item, col: indexPath.section))
-        if validMoves.contains(indexPath) {
-            cell.backgroundColor = .white
+        if isCellInValidMoves(indexPath) {
+            cell.highlightCell()
+        }
+
+        // Selected Index
+        if let selectedIndex = selectedIndexPath, selectedIndex.item == indexPath.item, selectedIndex.section == indexPath.section {
+            cell.highlightPiece()
         }
 
         return cell
@@ -231,7 +263,13 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if game.canPlayerSelectCell(row: indexPath.item, col: indexPath.section) {
+            selectedIndexPath = indexPath
             validMoves = game.getPossibleMovesForPiece(row: indexPath.item, col: indexPath.section)
+            collectionView.reloadData()
+        } else if isCellInValidMoves(indexPath) {
+            game.movePiece(fromRow: (selectedIndexPath?.item)!, fromCol: (selectedIndexPath?.section)!, toRow: indexPath.item, toCol: indexPath.section)
+            validMoves = [IndexPath]()
+            game.togglePlayersTurn()
             collectionView.reloadData()
         }
     }

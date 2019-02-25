@@ -162,11 +162,11 @@ class MainViewController: UIViewController {
     }
 
     @objc private func textFieldDidChange() {
-//        startGameButton.isEnabled = (nameTextField.text?.count)! > 1
-//        joinGameButton.isEnabled = (nameTextField.text?.count)! > 1
-//        nameErrorLabel.isHidden = (nameTextField.text?.count)! > 1
-//        startGameButton.backgroundColor = (startGameButton.isEnabled) ? .highlightColor : .buttonDisabled
-//        joinGameButton.backgroundColor = (joinGameButton.isEnabled) ? .highlightColor : .buttonDisabled
+        startGameButton.isEnabled = (nameTextField.text?.count)! > 1
+        joinGameButton.isEnabled = (nameTextField.text?.count)! > 1
+        nameErrorLabel.isHidden = (nameTextField.text?.count)! > 1
+        startGameButton.backgroundColor = (startGameButton.isEnabled) ? .highlightColor : .buttonDisabled
+        joinGameButton.backgroundColor = (joinGameButton.isEnabled) ? .highlightColor : .buttonDisabled
     }
 
     @objc private func dismissKeyboard(_ sender: UITapGestureRecognizer) {
