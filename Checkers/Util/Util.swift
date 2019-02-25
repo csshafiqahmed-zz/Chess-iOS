@@ -15,4 +15,12 @@ public class Util {
         } while result.count < 6
         return result
     }
+
+    public static func convertIndexToKey(row: Int, col: Int) -> String {
+        return "\(row),\(col)"
+    }
+
+    public static func convertIndexToKey(_ indexPath: IndexPath) -> String {
+        return "\(indexPath.item),\(indexPath.section)"
+    }
 }

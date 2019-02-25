@@ -34,4 +34,8 @@ public class Tile {
         self.isKing = isKing
         self.isPlayer1 = isPlayer1
     }
+
+    public func promotePiece() {
+        isKing = true
+    }
 }

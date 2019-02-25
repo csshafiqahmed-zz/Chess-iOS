@@ -94,20 +94,26 @@ public class Game {
         return false
     }
 
-    public func getPossibleMovesForPiece(row: Int, col: Int) -> [IndexPath] {
-        var validMoves = [IndexPath]()
+    public func getPossibleMovesForPiece(row: Int, col: Int) -> [Move] {
+        var validMoves = [Move]()
         if let tile = board.getTileForRowCol(row: row, col: col) {
             let possibleMoves = getPossibleMoves(tile)
             for move in possibleMoves {
                 let moveTile = board.getTileForRowCol(row: move.row, col: move.col)
                 if moveTile == nil  {
-                    validMoves.append(IndexPath(item: move.row, section: move.col))
+                    let moveType = isPromotionMove(row: move.row) ? MoveType.normalPromotion : MoveType.normal
+                    let move = Move(moveType: moveType, moveFromIndexPath: IndexPath(item: row, section: col),
+                            moveToIndexPath: IndexPath(item: move.row, section: move.col))
+                    validMoves.append(move)
                 } else if moveTile?.isPlayer1 != isPlayer1 {
                     // Check if opponent piece can be killed
                     let newRow = ((row - move.row) * -1) + move.row
                     let newCol = ((col - move.col) * -1) + move.col
                     if board.isRowColValid(row: newRow, col: newCol) && board.getTileForRowCol(row: newRow, col: newCol) == nil {
-                        validMoves.append(IndexPath(item: newRow, section: newCol))
+                        let moveType = isPromotionMove(row: newRow) ? MoveType.killPromotion : MoveType.kill
+                        let move = Move(moveType: moveType, moveFromIndexPath: IndexPath(item: row, section: col),
+                                moveToIndexPath: IndexPath(item: newRow, section: newCol), killPieceIndexPath: IndexPath(item: move.row, section: move.col))
+                        validMoves.append(move)
                     }
                 }
             }
@@ -143,13 +149,34 @@ public class Game {
         return possibleMoves
     }
 
-    public func movePiece(fromRow: Int, fromCol: Int, toRow: Int, toCol: Int) {
-        if let tile = board.getTileForRowCol(row: fromRow, col: fromCol) {
-            let newTile = Tile(row: toRow, col: toCol, isKing: tile.isKing, isPlayer1: tile.isPlayer1)
-            board.movePiece(fromKey: "\(fromRow),\(fromCol)", toTile: newTile)
-            let firebaseController = FirebaseGameController()
-            firebaseController.pushGame()
+    private func isPromotionMove(row: Int) -> Bool {
+        return row == 0
+    }
+
+    public func movePiece(_ move: Move) {
+        if let tile = board.getTileForRowCol(row: move.moveFromIndexPath.item, col: move.moveFromIndexPath.section) {
+            let newTile = Tile(row: move.moveToIndexPath.item, col: move.moveToIndexPath.section, isKing: tile.isKing, isPlayer1: tile.isPlayer1)
+            board.movePiece(fromKey: "\(move.moveFromIndexPath.item),\(move.moveFromIndexPath.section)", toTile: newTile)
+
+            switch move.moveType! {
+            case .normal:
+                ()
+            case .kill:
+                board.removePiece(Util.convertIndexToKey(move.killPieceIndexPath!))
+                let validMoves = getPossibleMovesForPiece(row: move.moveToIndexPath.item, col: move.moveToIndexPath.section)
+                for m in validMoves where m.moveType == .kill || m.moveType == .killPromotion {
+                    movePiece(m)
+                }
+            case .normalPromotion:
+                board.promotePiece(Util.convertIndexToKey(move.moveToIndexPath))
+            case .killPromotion:
+                board.removePiece(Util.convertIndexToKey(move.killPieceIndexPath!))
+                board.promotePiece(Util.convertIndexToKey(move.moveToIndexPath))
+            }
+
         }
     }
+
+
 
 }

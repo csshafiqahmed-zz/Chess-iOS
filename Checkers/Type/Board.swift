@@ -77,9 +77,13 @@ public class Board {
     }
 
     public func movePiece(fromKey: String, toTile: Tile) {
-        pieces.removeValue(forKey: fromKey)
+        removePiece(fromKey)
         let key = "\(toTile.row!),\(toTile.col!)"
         pieces[key] = toTile
+    }
+
+    public func removePiece(_ key: String) {
+        pieces.removeValue(forKey: key)
     }
 
     private func convertIndexForPlayer2(_ key: String) -> String {
@@ -89,5 +93,11 @@ public class Board {
         let player2Row = 8 - row! - 1
         let player2Col = 8 - col! - 1
         return "\(player2Row),\(player2Col)"
+    }
+    
+    public func promotePiece(_ key: String) {
+        if let piece = pieces[key] {
+            piece.promotePiece()
+        }
     }
 }

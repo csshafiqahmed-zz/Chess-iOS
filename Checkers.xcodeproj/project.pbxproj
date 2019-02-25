@@ -26,6 +26,7 @@
 		192E43407D16F99FC16053A0 /* FirebaseGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4F91D0D3AB3D64DF5037 /* FirebaseGameController.swift */; };
 		192E4379FDB3F0A352A2B477 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E424B178E077A20BD80BD /* Game.swift */; };
 		192E4416C5D7AC8EAE137947 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E45BCDAD2AFEC8DF40697 /* BoardCollectionViewCell.swift */; };
+		192E441D1FA0BB98AB196781 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4EF38A7084388ADF9FFC /* Move.swift */; };
 		192E4468ABCFF3B58601B198 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4199625EDA49553A5F40 /* Tile.swift */; };
 		192E4663100BB196DB44BE41 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E412A21529BB67EC8228A /* Message.swift */; };
 		192E4701CCFD8E3697FDB094 /* FirebaseFetchGameCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E42463598790A62A525DA /* FirebaseFetchGameCompletion.swift */; };
@@ -92,6 +93,7 @@
 		192E46CBCB7DC9FBBC67EA8B /* FirebaseKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseKey.swift; sourceTree = "<group>"; };
 		192E48F70C179717CE76CB8A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		192E4B03CC89D21589B3A60E /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		192E4EF38A7084388ADF9FFC /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		192E4F91D0D3AB3D64DF5037 /* FirebaseGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseGameController.swift; sourceTree = "<group>"; };
 		22317028C1C22D62E0848701 /* Pods-Checkers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.release.xcconfig"; sourceTree = "<group>"; };
 		24311ADDF8637758712C8FA0 /* Pods-Checkers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				192E416F5D579A3AC29A667E /* Board.swift */,
 				192E4199625EDA49553A5F40 /* Tile.swift */,
 				192E412A21529BB67EC8228A /* Message.swift */,
+				192E4EF38A7084388ADF9FFC /* Move.swift */,
 			);
 			path = Type;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				192E4416C5D7AC8EAE137947 /* BoardCollectionViewCell.swift in Sources */,
 				192E4D362E58FFA63727D6F4 /* Icon.swift in Sources */,
 				192E4663100BB196DB44BE41 /* Message.swift in Sources */,
+				192E441D1FA0BB98AB196781 /* Move.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

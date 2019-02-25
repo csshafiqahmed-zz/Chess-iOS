@@ -45,6 +45,7 @@ class BoardCollectionViewCell: UICollectionViewCell {
         } else {
             piece.isHidden = true
             piece.setPieceType((Game.getInstance().isPlayer1Turn) ? .RED : .BLUE)
+            piece.toggleKingImage(false)
         }
     }
 

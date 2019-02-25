@@ -26,7 +26,7 @@ class BoardViewController: UIViewController {
     private var firebaseReference: FirebaseReference!
     private var game: Game!
     private var selectedIndexPath: IndexPath?
-    private var validMoves: [IndexPath]!
+    private var validMoves: [Move]!
     private let boardSize = UIScreen.main.bounds.width - 24
 
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class BoardViewController: UIViewController {
         firebaseGameController = FirebaseGameController()
         firebaseReference = FirebaseReference()
         game = Game.getInstance()
-        validMoves = [IndexPath]()
+        validMoves = [Move]()
 
         setupView()
         addConstraints()
@@ -206,26 +206,31 @@ class BoardViewController: UIViewController {
 
     private func refreshGameState() {
         game.refreshGame {
-            self.player1Label.text = self.game.player1Name
-            self.player2Label.text = self.game.player2Name
-            self.collectionView.reloadData()
+            self.refreshView()
         }
     }
     
-    private func isCellInValidMoves(_ indexPath: IndexPath) -> Bool {
-        for index in validMoves where index.item == indexPath.item && index.section == indexPath.section {
-            return true
+    private func isCellInValidMoves(_ indexPath: IndexPath) -> Move? {
+        for move in validMoves where move.moveToIndexPath.item == indexPath.item && move.moveToIndexPath.section == indexPath.section {
+            return move
         }
-        return false
+        return nil
     }
 
     private func addValueEventListener() {
         firebaseReference.getGameReference(game.gameUid!).observe(.value) { snapshot in
             if snapshot.exists() {
                 self.game.refreshGame(dataSnapshot: snapshot)
-                self.collectionView.reloadData()
+                self.refreshView()
             }
         }
+    }
+
+    private func refreshView() {
+        player1Label.text = game.player1Name
+        player2Label.text = self.game.player2Name
+        turnLabel.text = game.isPlayer1 ? Message.YOUR_TURN : Message.OPPONENT_TURN
+        collectionView.reloadData()
     }
 }
 
@@ -249,7 +254,7 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
 
         cell.refreshCell(game.board.getTileForRowCol(row: indexPath.item, col: indexPath.section))
-        if isCellInValidMoves(indexPath) {
+        if let move = isCellInValidMoves(indexPath) {
             cell.highlightCell()
         }
 
@@ -265,12 +270,16 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
         if game.canPlayerSelectCell(row: indexPath.item, col: indexPath.section) {
             selectedIndexPath = indexPath
             validMoves = game.getPossibleMovesForPiece(row: indexPath.item, col: indexPath.section)
-            collectionView.reloadData()
-        } else if isCellInValidMoves(indexPath) {
-            game.movePiece(fromRow: (selectedIndexPath?.item)!, fromCol: (selectedIndexPath?.section)!, toRow: indexPath.item, toCol: indexPath.section)
-            validMoves = [IndexPath]()
+            refreshView()
+        } else if let move = isCellInValidMoves(indexPath) {
+            game.movePiece(move)
+            selectedIndexPath = nil
+            validMoves = [Move]()
             game.togglePlayersTurn()
-            collectionView.reloadData()
+            refreshView()
+            firebaseGameController.pushGame()
+        } else {
+            validMoves = [Move]()
         }
     }
 
