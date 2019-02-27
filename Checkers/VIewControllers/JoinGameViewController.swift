@@ -103,7 +103,7 @@ class JoinGameViewController: UIViewController {
                 switch firebaseJoinGameCompletion {
                 case .gameWaitingForPlayer2:
                     self.joinGame()
-                case .gameInProgress:
+                case .gameInProgress, .gameDoesNotExist:
                     self.errorLabel.isHidden = false
                     self.textField.isUserInteractionEnabled = true
                 }
