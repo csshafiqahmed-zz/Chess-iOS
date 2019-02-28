@@ -82,10 +82,11 @@ class JoinGameViewController: UIViewController {
         textField.attributedPlaceholder = NSAttributedString(string: "Enter the game code",
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor(hex: 0x9e9e9e)])
         textField.textColor = .white
-        textField.font = UIFont.systemFont(ofSize: 36, weight: .medium)
+        textField.font = UIFont.systemFont(ofSize: 30, weight: .medium)
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        textField.adjustsFontSizeToFitWidth = true
         view.addSubview(textField)
 
         errorLabel = UILabel()
