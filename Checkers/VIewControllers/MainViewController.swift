@@ -115,6 +115,7 @@ class MainViewController: UIViewController {
         nameTextField.font = UIFont.systemFont(ofSize: 36, weight: .medium)
         nameTextField.textAlignment = .center
         nameTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        nameTextField.accessibilityIdentifier = "NameTextField"
         view.addSubview(nameTextField)
         
         startGameButton = UIButton()
@@ -124,6 +125,7 @@ class MainViewController: UIViewController {
         startGameButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         startGameButton.addShadow()
         startGameButton.addTarget(self, action: #selector(startGameButtonAction), for: .touchUpInside)
+        startGameButton.accessibilityIdentifier = "StartGame"
         view.addSubview(startGameButton)
         
         joinGameButton = UIButton()
@@ -133,6 +135,7 @@ class MainViewController: UIViewController {
         joinGameButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         joinGameButton.addShadow()
         joinGameButton.addTarget(self, action: #selector(joinGameButtonAction), for: .touchUpInside)
+        joinGameButton.accessibilityIdentifier = "JoinGame"
         view.addSubview(joinGameButton)
 
         nameErrorLabel = UILabel()
@@ -143,10 +146,11 @@ class MainViewController: UIViewController {
         nameErrorLabel.numberOfLines = 2
         nameErrorLabel.lineBreakMode = .byWordWrapping
         nameErrorLabel.isHidden = true
+        nameErrorLabel.accessibilityIdentifier = "NameErrorLabel"
         view.addSubview(nameErrorLabel)
     }
     
-    @objc private func startGameButtonAction() {
+    @objc fileprivate func startGameButtonAction() {
         // Set Player1 name
         game.startNewGame(nameTextField.text!)
         game.setIsPlayer1(true)
@@ -154,14 +158,14 @@ class MainViewController: UIViewController {
         firebaseGameController.createNewGame()
         navigationController?.pushViewController(StartNewGameViewController(), animated: true)
     }
-    
-    @objc private func joinGameButtonAction() {
+
+    @objc fileprivate func joinGameButtonAction() {
         game.setPlayer2Name(nameTextField.text!)
         game.setIsPlayer1(false)
         navigationController?.pushViewController(JoinGameViewController(), animated: true)
     }
 
-    @objc private func textFieldDidChange() {
+    @objc fileprivate func textFieldDidChange() {
         startGameButton.isEnabled = (nameTextField.text?.count)! > 1
         joinGameButton.isEnabled = (nameTextField.text?.count)! > 1
         nameErrorLabel.isHidden = (nameTextField.text?.count)! > 1
@@ -169,7 +173,7 @@ class MainViewController: UIViewController {
         joinGameButton.backgroundColor = (joinGameButton.isEnabled) ? .highlightColor : .buttonDisabled
     }
 
-    @objc private func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+    @objc fileprivate func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
 }

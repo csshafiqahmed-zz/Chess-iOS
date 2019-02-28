@@ -1,6 +1,0 @@
-framework module Pods_CheckersUITests {
-  umbrella header "Pods-CheckersUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

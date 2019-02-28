@@ -23,7 +23,6 @@ public class FirebaseGameController {
                                     FirebaseKey.GAME_TURN: game.isPlayer1Turn,
                                     FirebaseKey.BOARD: game.board.convertToFirebase()]
 
-
         firebaseReference.getGameReference(game.gameUid!).setValue(data)
     }
 
@@ -34,13 +33,19 @@ public class FirebaseGameController {
 
     /// Checks if user can enter a game with uid
     public func isGameUidValid(_ gameUid: String, completion: @escaping ((FirebaseJoinGameCompletion) -> Void)) {
-        let gameReference = firebaseReference.getGameReference(gameUid).child(FirebaseKey.GAME_PLAYER2)
+        let gameReference = firebaseReference.getGameReference(gameUid)
         gameReference.observeSingleEvent(of: .value) { (gameSnapshot: DataSnapshot) in
             if gameSnapshot.exists() {
-                completion(.gameInProgress)
+                if gameSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER2).exists() {
+                    completion(.gameInProgress)
+                } else {
+                    completion(.gameWaitingForPlayer2)
+                }
                 return
+            } else {
+                completion(.gameDoesNotExist)
             }
-            completion(.gameWaitingForPlayer2)
+            
         }
     }
     
@@ -67,8 +72,8 @@ public class FirebaseGameController {
     }
     
     /// Set player 2 name in Firebase
-    public func pushPlayer2ToFirebase(_ gameUid: String) {
+    public func pushPlayer2ToFirebase(_ gameUid: String, player2Name: String? = Game.getInstance().player2Name) {
         let gameReference = firebaseReference.getGameReference(gameUid)
-        gameReference.child(FirebaseKey.GAME_PLAYER2).setValue(game.player2Name)
+        gameReference.child(FirebaseKey.GAME_PLAYER2).setValue(player2Name)
     }
 }

@@ -80,6 +80,7 @@ class JoinGameViewController: UIViewController {
         textField.textAlignment = .center
         textField.keyboardType = .numberPad
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        textField.accessibilityLabel = "TextField"
         view.addSubview(textField)
 
         errorLabel = UILabel()
@@ -103,7 +104,7 @@ class JoinGameViewController: UIViewController {
                 switch firebaseJoinGameCompletion {
                 case .gameWaitingForPlayer2:
                     self.joinGame()
-                case .gameInProgress:
+                case .gameInProgress, .gameDoesNotExist:
                     self.errorLabel.isHidden = false
                     self.textField.isUserInteractionEnabled = true
                 }

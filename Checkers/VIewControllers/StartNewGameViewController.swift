@@ -91,6 +91,7 @@ class StartNewGameViewController: UIViewController {
         gameUidLabel.textColor = .highlightColor
         gameUidLabel.textAlignment = .center
         gameUidLabel.font = UIFont.systemFont(ofSize: 42, weight: .bold)
+        gameUidLabel.accessibilityLabel = "UIDLabel"
         view.addSubview(gameUidLabel)
 
         descriptionLabel = UILabel()

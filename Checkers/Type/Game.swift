@@ -58,6 +58,7 @@ public class Game {
         let util = Util()
         self.player1Name = name
         self.gameUid = util.generateGameUid()
+        self.board = Board()
     }
 
     public func resetGame() {
@@ -182,9 +183,8 @@ public class Game {
             return .PLAYER1
         } else if board.getPlayer2KillCount() == 12 {
             return .PLAYER2
-        } else {
-            return .GAME_IN_PROGRESS
         }
+        return .GAME_IN_PROGRESS
     }
 
 }

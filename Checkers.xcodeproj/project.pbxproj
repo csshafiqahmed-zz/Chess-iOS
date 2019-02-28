@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101AD7B62224D3AC00B7CF78 /* MainViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AD7B52224D3AC00B7CF78 /* MainViewControllerUITests.swift */; };
+		101AD7B82224D41900B7CF78 /* StartNewGameViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AD7B72224D41900B7CF78 /* StartNewGameViewControllerUITests.swift */; };
+		101AD7BA2224D58B00B7CF78 /* JoinViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AD7B92224D58B00B7CF78 /* JoinViewControllerUITests.swift */; };
+		101AD7BC2224F4F800B7CF78 /* BoardViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101AD7BB2224F4F800B7CF78 /* BoardViewControllerUITests.swift */; };
+		101E12A3222592580022A53F /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E12A2222592580022A53F /* UtilTests.swift */; };
+		101E12A52225B1EF0022A53F /* IconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E12A42225B1EF0022A53F /* IconTests.swift */; };
+		101E12A92225B5ED0022A53F /* FirebaseGameControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E12A82225B5ED0022A53F /* FirebaseGameControllerTests.swift */; };
+		101E12AB2225B7AF0022A53F /* FirebaseCreateNewGameCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E12AA2225B7AF0022A53F /* FirebaseCreateNewGameCompletion.swift */; };
+		101E12AD2225D6FF0022A53F /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E12AC2225D6FF0022A53F /* GameTests.swift */; };
+		101E12AF2225F43C0022A53F /* BoardCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101E12AE2225F43C0022A53F /* BoardCollectionViewCellTests.swift */; };
 		104232302209D715008DC01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042322F2209D715008DC01A /* AppDelegate.swift */; };
 		104232322209D715008DC01A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104232312209D715008DC01A /* MainViewController.swift */; };
 		104232352209D715008DC01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104232332209D715008DC01A /* Main.storyboard */; };
 		104232372209D716008DC01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104232362209D716008DC01A /* Assets.xcassets */; };
 		1042323A2209D716008DC01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104232382209D716008DC01A /* LaunchScreen.storyboard */; };
-		104232452209D716008DC01A /* CheckersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104232442209D716008DC01A /* CheckersTests.swift */; };
-		104232502209D716008DC01A /* CheckersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1042324F2209D716008DC01A /* CheckersUITests.swift */; };
 		105A397D221CA4FF00753459 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 105A397C221CA4FF00753459 /* GoogleService-Info.plist */; };
+		108BFF4D2224D1DD0021D899 /* Pods_Checkers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 108BFF4C2224D1DD0021D899 /* Pods_Checkers.framework */; };
 		109B046F220A547800E15704 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B046E220A547800E15704 /* Color.swift */; };
 		109B0472220A54FA00E15704 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0471220A54FA00E15704 /* UIColorExtensions.swift */; };
 		109B0474220A559E00E15704 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0473220A559E00E15704 /* UIViewExtensions.swift */; };
@@ -37,20 +46,19 @@
 		192E4C62151BB160A9DB1DC0 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4B03CC89D21589B3A60E /* Piece.swift */; };
 		192E4D362E58FFA63727D6F4 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E43365ACA329E40529942 /* Icon.swift */; };
 		192E4F87E160BF860B627222 /* FirebaseJoinGameCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E46B1040AFA6E3484CEBE /* FirebaseJoinGameCompletion.swift */; };
-		2715A14F089E9D59F764E06B /* Pods_Checkers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E40A372F8F064CCE1029190 /* Pods_Checkers.framework */; };
-		C24A5BE16E5AAC3F7C19FEFC /* Pods_CheckersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6067BF35B5B0D82E2F78B3F /* Pods_CheckersTests.framework */; };
-		DE58A98CB037F230E6945CE3 /* Pods_CheckersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A638FDC2A6F6798354C6F11E /* Pods_CheckersUITests.framework */; };
+		9D3CE5F7F602658FC870DA0E /* Pods_Checkers_CheckersUnitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC858C7C382EFAFDF55F03D9 /* Pods_Checkers_CheckersUnitTests.framework */; };
+		B9F1105CE61B32200C5BCE74 /* Pods_Checkers_CheckersUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C29AEDB29820D48B866848 /* Pods_Checkers_CheckersUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		104232412209D716008DC01A /* PBXContainerItemProxy */ = {
+		101AD7B02224D37E00B7CF78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 104232242209D715008DC01A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1042322B2209D715008DC01A;
 			remoteInfo = Checkers;
 		};
-		1042324C2209D716008DC01A /* PBXContainerItemProxy */ = {
+		101E129D2225914B0022A53F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 104232242209D715008DC01A /* Project object */;
 			proxyType = 1;
@@ -59,8 +67,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1025DBAB2224C38A002981E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		003C46AA21963982DEC6556C /* Pods-CheckersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersTests/Pods-CheckersTests.release.xcconfig"; sourceTree = "<group>"; };
+		101AD7AB2224D37E00B7CF78 /* CheckersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		101AD7AF2224D37E00B7CF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		101AD7B52224D3AC00B7CF78 /* MainViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerUITests.swift; sourceTree = "<group>"; };
+		101AD7B72224D41900B7CF78 /* StartNewGameViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewControllerUITests.swift; sourceTree = "<group>"; };
+		101AD7B92224D58B00B7CF78 /* JoinViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewControllerUITests.swift; sourceTree = "<group>"; };
+		101AD7BB2224F4F800B7CF78 /* BoardViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewControllerUITests.swift; sourceTree = "<group>"; };
+		101E12982225914B0022A53F /* CheckersUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckersUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		101E129C2225914B0022A53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		101E12A2222592580022A53F /* UtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
+		101E12A42225B1EF0022A53F /* IconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTests.swift; sourceTree = "<group>"; };
+		101E12A82225B5ED0022A53F /* FirebaseGameControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGameControllerTests.swift; sourceTree = "<group>"; };
+		101E12AA2225B7AF0022A53F /* FirebaseCreateNewGameCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCreateNewGameCompletion.swift; sourceTree = "<group>"; };
+		101E12AC2225D6FF0022A53F /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		101E12AE2225F43C0022A53F /* BoardCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCellTests.swift; sourceTree = "<group>"; };
+		1025DBAC2224C3AD002981E7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1042322C2209D715008DC01A /* Checkers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1042322F2209D715008DC01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		104232312209D715008DC01A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -68,17 +103,18 @@
 		104232362209D716008DC01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		104232392209D716008DC01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1042323B2209D716008DC01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		104232402209D716008DC01A /* CheckersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		104232442209D716008DC01A /* CheckersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersTests.swift; sourceTree = "<group>"; };
-		104232462209D716008DC01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1042324B2209D716008DC01A /* CheckersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1042324F2209D716008DC01A /* CheckersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersUITests.swift; sourceTree = "<group>"; };
-		104232512209D716008DC01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105A397C221CA4FF00753459 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		108BFF422224D0E60021D899 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		108BFF442224D1010021D899 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		108BFF462224D1520021D899 /* Pods_Checkers_CheckersAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Checkers_CheckersAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		108BFF482224D15A0021D899 /* Pods_Checkers_CheckersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Checkers_CheckersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		108BFF4A2224D1C40021D899 /* Pods_Checkers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Checkers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		108BFF4C2224D1DD0021D899 /* Pods_Checkers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Checkers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		109B046E220A547800E15704 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		109B0471220A54FA00E15704 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		109B0473220A559E00E15704 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		109B0475220A663A00E15704 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
+		11F79F7554BA3B4A40121FC8 /* Pods_Checkers_CheckersAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkers_CheckersAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		192E40FA418D482A9D1954F9 /* PieceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		192E412A21529BB67EC8228A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		192E4149D4E7FAF9749C8040 /* JoinGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
@@ -97,53 +133,90 @@
 		192E4B03CC89D21589B3A60E /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		192E4EF38A7084388ADF9FFC /* Move.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		192E4F91D0D3AB3D64DF5037 /* FirebaseGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseGameController.swift; sourceTree = "<group>"; };
-		22317028C1C22D62E0848701 /* Pods-Checkers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.release.xcconfig"; sourceTree = "<group>"; };
-		24311ADDF8637758712C8FA0 /* Pods-Checkers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.debug.xcconfig"; sourceTree = "<group>"; };
-		2CADB7BBF203B2592A6BD250 /* Pods-CheckersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersUITests/Pods-CheckersUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		73479379AC63859F0986705A /* Pods-CheckersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersUITests/Pods-CheckersUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8E40A372F8F064CCE1029190 /* Pods_Checkers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A638FDC2A6F6798354C6F11E /* Pods_CheckersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6067BF35B5B0D82E2F78B3F /* Pods_CheckersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3E365087F9B8FED0F1C4760 /* Pods-CheckersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersTests/Pods-CheckersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1AD819D1411D8D508CA39212 /* Pods_CheckersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C54A021DE544B82FE81BE8C /* Pods_CheckersAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckersAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F73BFEBEBF53E33403B4622 /* Pods-Checkers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.debug.xcconfig"; sourceTree = "<group>"; };
+		23D9049EBCB3CFBB84A9352D /* Pods-Checkers-CheckersUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersUnitTests/Pods-Checkers-CheckersUnitTests.release.xcconfig"; sourceTree = "<group>"; };
+		244D8A22574EF4286D694022 /* Pods-Checkers-CheckersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersTests/Pods-Checkers-CheckersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		30D6720A41C96B73199139C4 /* Pods-Checkers-CheckersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersUITests/Pods-Checkers-CheckersUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5BB04A43E1627B6712BE3284 /* Pods-Checkers-CheckersAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersAppUITests/Pods-Checkers-CheckersAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		69C29AEDB29820D48B866848 /* Pods_Checkers_CheckersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkers_CheckersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D05200881D483C9D64A776 /* Pods-CheckersAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersAppUITests/Pods-CheckersAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		837A852F8E70D2B5FCFD50D4 /* Pods_Checkers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F20CF638E6213B9B3C7F172 /* Pods-CheckersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersTests/Pods-CheckersTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE14F38BB909F2F0C77EE4A2 /* Pods_Checkers_CheckersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkers_CheckersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC858C7C382EFAFDF55F03D9 /* Pods_Checkers_CheckersUnitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkers_CheckersUnitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C873E974B8346D3CAC7D66A0 /* Pods-CheckersAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersAppUITests/Pods-CheckersAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD3A5CDFCD26CA919F3FFF0A /* Pods-CheckersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckersTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckersTests/Pods-CheckersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D802271C4620831945DCF500 /* Pods-Checkers-CheckersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersTests/Pods-Checkers-CheckersTests.release.xcconfig"; sourceTree = "<group>"; };
+		E1CD230739593971B8801007 /* Pods-Checkers-CheckersUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersUnitTests/Pods-Checkers-CheckersUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EFA0873E16A9CB2DB8C16309 /* Pods-Checkers-CheckersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersUITests/Pods-Checkers-CheckersUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1ED73D20D3F59B35813FCD9 /* Pods-Checkers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers/Pods-Checkers.release.xcconfig"; sourceTree = "<group>"; };
+		FD058711DBA11C586320BD23 /* Pods-Checkers-CheckersAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkers-CheckersAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkers-CheckersAppUITests/Pods-Checkers-CheckersAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		101AD7A82224D37E00B7CF78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9F1105CE61B32200C5BCE74 /* Pods_Checkers_CheckersUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101E12952225914B0022A53F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D3CE5F7F602658FC870DA0E /* Pods_Checkers_CheckersUnitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		104232292209D715008DC01A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2715A14F089E9D59F764E06B /* Pods_Checkers.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1042323D2209D716008DC01A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C24A5BE16E5AAC3F7C19FEFC /* Pods_CheckersTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		104232482209D716008DC01A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE58A98CB037F230E6945CE3 /* Pods_CheckersUITests.framework in Frameworks */,
+				108BFF4D2224D1DD0021D899 /* Pods_Checkers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		101AD7AC2224D37E00B7CF78 /* CheckersUITests */ = {
+			isa = PBXGroup;
+			children = (
+				101AD7B52224D3AC00B7CF78 /* MainViewControllerUITests.swift */,
+				101AD7B72224D41900B7CF78 /* StartNewGameViewControllerUITests.swift */,
+				101AD7B92224D58B00B7CF78 /* JoinViewControllerUITests.swift */,
+				101AD7BB2224F4F800B7CF78 /* BoardViewControllerUITests.swift */,
+				101AD7AF2224D37E00B7CF78 /* Info.plist */,
+			);
+			path = CheckersUITests;
+			sourceTree = "<group>";
+		};
+		101E12992225914B0022A53F /* CheckersUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				101E12A2222592580022A53F /* UtilTests.swift */,
+				101E12A42225B1EF0022A53F /* IconTests.swift */,
+				101E129C2225914B0022A53F /* Info.plist */,
+				101E12A82225B5ED0022A53F /* FirebaseGameControllerTests.swift */,
+				101E12AC2225D6FF0022A53F /* GameTests.swift */,
+				101E12AE2225F43C0022A53F /* BoardCollectionViewCellTests.swift */,
+			);
+			path = CheckersUnitTests;
+			sourceTree = "<group>";
+		};
 		104232232209D715008DC01A = {
 			isa = PBXGroup;
 			children = (
 				1042322E2209D715008DC01A /* Checkers */,
-				104232432209D716008DC01A /* CheckersTests */,
-				1042324E2209D716008DC01A /* CheckersUITests */,
+				101AD7AC2224D37E00B7CF78 /* CheckersUITests */,
+				101E12992225914B0022A53F /* CheckersUnitTests */,
 				1042322D2209D715008DC01A /* Products */,
-				D3B31D7E26BA49181FEC7CA5 /* Pods */,
 				8BE0E6748DF3483352896678 /* Frameworks */,
+				858817355EEA82B104CA0209 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,8 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				1042322C2209D715008DC01A /* Checkers.app */,
-				104232402209D716008DC01A /* CheckersTests.xctest */,
-				1042324B2209D716008DC01A /* CheckersUITests.xctest */,
+				101AD7AB2224D37E00B7CF78 /* CheckersUITests.xctest */,
+				101E12982225914B0022A53F /* CheckersUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,24 +247,6 @@
 				192E4DE0AB3E409437842941 /* Cells */,
 			);
 			path = Checkers;
-			sourceTree = "<group>";
-		};
-		104232432209D716008DC01A /* CheckersTests */ = {
-			isa = PBXGroup;
-			children = (
-				104232442209D716008DC01A /* CheckersTests.swift */,
-				104232462209D716008DC01A /* Info.plist */,
-			);
-			path = CheckersTests;
-			sourceTree = "<group>";
-		};
-		1042324E2209D716008DC01A /* CheckersUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1042324F2209D716008DC01A /* CheckersUITests.swift */,
-				104232512209D716008DC01A /* Info.plist */,
-			);
-			path = CheckersUITests;
 			sourceTree = "<group>";
 		};
 		1042325D2209DA94008DC01A /* VIewControllers */ = {
@@ -239,6 +294,7 @@
 			children = (
 				192E46B1040AFA6E3484CEBE /* FirebaseJoinGameCompletion.swift */,
 				192E42463598790A62A525DA /* FirebaseFetchGameCompletion.swift */,
+				101E12AA2225B7AF0022A53F /* FirebaseCreateNewGameCompletion.swift */,
 			);
 			path = CompletionHandlers;
 			sourceTree = "<group>";
@@ -283,41 +339,101 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		858817355EEA82B104CA0209 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F73BFEBEBF53E33403B4622 /* Pods-Checkers.debug.xcconfig */,
+				F1ED73D20D3F59B35813FCD9 /* Pods-Checkers.release.xcconfig */,
+				C873E974B8346D3CAC7D66A0 /* Pods-CheckersAppUITests.debug.xcconfig */,
+				79D05200881D483C9D64A776 /* Pods-CheckersAppUITests.release.xcconfig */,
+				CD3A5CDFCD26CA919F3FFF0A /* Pods-CheckersTests.debug.xcconfig */,
+				8F20CF638E6213B9B3C7F172 /* Pods-CheckersTests.release.xcconfig */,
+				FD058711DBA11C586320BD23 /* Pods-Checkers-CheckersAppUITests.debug.xcconfig */,
+				5BB04A43E1627B6712BE3284 /* Pods-Checkers-CheckersAppUITests.release.xcconfig */,
+				244D8A22574EF4286D694022 /* Pods-Checkers-CheckersTests.debug.xcconfig */,
+				D802271C4620831945DCF500 /* Pods-Checkers-CheckersTests.release.xcconfig */,
+				EFA0873E16A9CB2DB8C16309 /* Pods-Checkers-CheckersUITests.debug.xcconfig */,
+				30D6720A41C96B73199139C4 /* Pods-Checkers-CheckersUITests.release.xcconfig */,
+				E1CD230739593971B8801007 /* Pods-Checkers-CheckersUnitTests.debug.xcconfig */,
+				23D9049EBCB3CFBB84A9352D /* Pods-Checkers-CheckersUnitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8BE0E6748DF3483352896678 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8E40A372F8F064CCE1029190 /* Pods_Checkers.framework */,
-				C6067BF35B5B0D82E2F78B3F /* Pods_CheckersTests.framework */,
-				A638FDC2A6F6798354C6F11E /* Pods_CheckersUITests.framework */,
+				108BFF4C2224D1DD0021D899 /* Pods_Checkers.framework */,
+				108BFF4A2224D1C40021D899 /* Pods_Checkers.framework */,
+				108BFF482224D15A0021D899 /* Pods_Checkers_CheckersTests.framework */,
+				108BFF462224D1520021D899 /* Pods_Checkers_CheckersAppUITests.framework */,
+				108BFF442224D1010021D899 /* SnapKit.framework */,
+				108BFF422224D0E60021D899 /* SnapKit.framework */,
+				1025DBAC2224C3AD002981E7 /* GoogleUtilities.framework */,
+				837A852F8E70D2B5FCFD50D4 /* Pods_Checkers.framework */,
+				1C54A021DE544B82FE81BE8C /* Pods_CheckersAppUITests.framework */,
+				1AD819D1411D8D508CA39212 /* Pods_CheckersTests.framework */,
+				11F79F7554BA3B4A40121FC8 /* Pods_Checkers_CheckersAppUITests.framework */,
+				AE14F38BB909F2F0C77EE4A2 /* Pods_Checkers_CheckersTests.framework */,
+				69C29AEDB29820D48B866848 /* Pods_Checkers_CheckersUITests.framework */,
+				BC858C7C382EFAFDF55F03D9 /* Pods_Checkers_CheckersUnitTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D3B31D7E26BA49181FEC7CA5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				24311ADDF8637758712C8FA0 /* Pods-Checkers.debug.xcconfig */,
-				22317028C1C22D62E0848701 /* Pods-Checkers.release.xcconfig */,
-				D3E365087F9B8FED0F1C4760 /* Pods-CheckersTests.debug.xcconfig */,
-				003C46AA21963982DEC6556C /* Pods-CheckersTests.release.xcconfig */,
-				2CADB7BBF203B2592A6BD250 /* Pods-CheckersUITests.debug.xcconfig */,
-				73479379AC63859F0986705A /* Pods-CheckersUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		101AD7AA2224D37E00B7CF78 /* CheckersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 101AD7B42224D37E00B7CF78 /* Build configuration list for PBXNativeTarget "CheckersUITests" */;
+			buildPhases = (
+				C5C4DA92D6B5B1ABD9444E89 /* [CP] Check Pods Manifest.lock */,
+				101AD7A72224D37E00B7CF78 /* Sources */,
+				101AD7A82224D37E00B7CF78 /* Frameworks */,
+				101AD7A92224D37E00B7CF78 /* Resources */,
+				2DB0734398426BF47617A2B0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				101AD7B12224D37E00B7CF78 /* PBXTargetDependency */,
+			);
+			name = CheckersUITests;
+			productName = CheckersUITests;
+			productReference = 101AD7AB2224D37E00B7CF78 /* CheckersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		101E12972225914B0022A53F /* CheckersUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 101E129F2225914B0022A53F /* Build configuration list for PBXNativeTarget "CheckersUnitTests" */;
+			buildPhases = (
+				9C8E44F7C2A5EFE1B0C880DB /* [CP] Check Pods Manifest.lock */,
+				101E12942225914B0022A53F /* Sources */,
+				101E12952225914B0022A53F /* Frameworks */,
+				101E12962225914B0022A53F /* Resources */,
+				0D117ADB3693FFF052B74166 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				101E129E2225914B0022A53F /* PBXTargetDependency */,
+			);
+			name = CheckersUnitTests;
+			productName = CheckersUnitTests;
+			productReference = 101E12982225914B0022A53F /* CheckersUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1042322B2209D715008DC01A /* Checkers */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 104232542209D716008DC01A /* Build configuration list for PBXNativeTarget "Checkers" */;
 			buildPhases = (
-				70225DA11F5823736867B53B /* [CP] Check Pods Manifest.lock */,
+				6D1FA9AE36FFC276439FD6B2 /* [CP] Check Pods Manifest.lock */,
 				104232282209D715008DC01A /* Sources */,
 				104232292209D715008DC01A /* Frameworks */,
 				1042322A2209D715008DC01A /* Resources */,
-				3389F711FC51C8EA23C622C3 /* [CP] Embed Pods Frameworks */,
+				1025DBAB2224C38A002981E7 /* Embed Frameworks */,
+				8791D23F41E0071DA95AF956 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,44 +443,6 @@
 			productName = Checkers;
 			productReference = 1042322C2209D715008DC01A /* Checkers.app */;
 			productType = "com.apple.product-type.application";
-		};
-		1042323F2209D716008DC01A /* CheckersTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 104232572209D716008DC01A /* Build configuration list for PBXNativeTarget "CheckersTests" */;
-			buildPhases = (
-				ECEAEBE2F22572F7479A0553 /* [CP] Check Pods Manifest.lock */,
-				1042323C2209D716008DC01A /* Sources */,
-				1042323D2209D716008DC01A /* Frameworks */,
-				1042323E2209D716008DC01A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				104232422209D716008DC01A /* PBXTargetDependency */,
-			);
-			name = CheckersTests;
-			productName = CheckersTests;
-			productReference = 104232402209D716008DC01A /* CheckersTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1042324A2209D716008DC01A /* CheckersUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1042325A2209D716008DC01A /* Build configuration list for PBXNativeTarget "CheckersUITests" */;
-			buildPhases = (
-				75B08E69490AB36D500E3529 /* [CP] Check Pods Manifest.lock */,
-				104232472209D716008DC01A /* Sources */,
-				104232482209D716008DC01A /* Frameworks */,
-				104232492209D716008DC01A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1042324D2209D716008DC01A /* PBXTargetDependency */,
-			);
-			name = CheckersUITests;
-			productName = CheckersUITests;
-			productReference = 1042324B2209D716008DC01A /* CheckersUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -376,16 +454,16 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = SatishBoggarapu;
 				TargetAttributes = {
+					101AD7AA2224D37E00B7CF78 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1042322B2209D715008DC01A;
+					};
+					101E12972225914B0022A53F = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1042322B2209D715008DC01A;
+					};
 					1042322B2209D715008DC01A = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					1042323F2209D716008DC01A = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 1042322B2209D715008DC01A;
-					};
-					1042324A2209D716008DC01A = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 1042322B2209D715008DC01A;
 					};
 				};
 			};
@@ -403,13 +481,27 @@
 			projectRoot = "";
 			targets = (
 				1042322B2209D715008DC01A /* Checkers */,
-				1042323F2209D716008DC01A /* CheckersTests */,
-				1042324A2209D716008DC01A /* CheckersUITests */,
+				101AD7AA2224D37E00B7CF78 /* CheckersUITests */,
+				101E12972225914B0022A53F /* CheckersUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		101AD7A92224D37E00B7CF78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101E12962225914B0022A53F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1042322A2209D715008DC01A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,24 +513,88 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1042323E2209D716008DC01A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		104232492209D716008DC01A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3389F711FC51C8EA23C622C3 /* [CP] Embed Pods Frameworks */ = {
+		0D117ADB3693FFF052B74166 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Checkers-CheckersUnitTests/Pods-Checkers-CheckersUnitTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Checkers-CheckersUnitTests/Pods-Checkers-CheckersUnitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DB0734398426BF47617A2B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Checkers-CheckersUITests/Pods-Checkers-CheckersUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Checkers-CheckersUITests/Pods-Checkers-CheckersUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D1FA9AE36FFC276439FD6B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Checkers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8791D23F41E0071DA95AF956 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -466,7 +622,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Checkers/Pods-Checkers-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70225DA11F5823736867B53B /* [CP] Check Pods Manifest.lock */ = {
+		9C8E44F7C2A5EFE1B0C880DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -481,14 +637,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Checkers-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Checkers-CheckersUnitTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		75B08E69490AB36D500E3529 /* [CP] Check Pods Manifest.lock */ = {
+		C5C4DA92D6B5B1ABD9444E89 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -503,29 +659,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CheckersUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ECEAEBE2F22572F7479A0553 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CheckersTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Checkers-CheckersUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -535,6 +669,29 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		101AD7A72224D37E00B7CF78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101AD7B62224D3AC00B7CF78 /* MainViewControllerUITests.swift in Sources */,
+				101AD7BA2224D58B00B7CF78 /* JoinViewControllerUITests.swift in Sources */,
+				101AD7BC2224F4F800B7CF78 /* BoardViewControllerUITests.swift in Sources */,
+				101AD7B82224D41900B7CF78 /* StartNewGameViewControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101E12942225914B0022A53F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101E12A52225B1EF0022A53F /* IconTests.swift in Sources */,
+				101E12A92225B5ED0022A53F /* FirebaseGameControllerTests.swift in Sources */,
+				101E12AF2225F43C0022A53F /* BoardCollectionViewCellTests.swift in Sources */,
+				101E12A3222592580022A53F /* UtilTests.swift in Sources */,
+				101E12AD2225D6FF0022A53F /* GameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		104232282209D715008DC01A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -555,6 +712,7 @@
 				192E4F87E160BF860B627222 /* FirebaseJoinGameCompletion.swift in Sources */,
 				192E4701CCFD8E3697FDB094 /* FirebaseFetchGameCompletion.swift in Sources */,
 				192E4C62151BB160A9DB1DC0 /* Piece.swift in Sources */,
+				101E12AB2225B7AF0022A53F /* FirebaseCreateNewGameCompletion.swift in Sources */,
 				192E419E229B912C0C8892EC /* PieceType.swift in Sources */,
 				192E424358C02C73F49BFC0F /* Board.swift in Sources */,
 				192E4468ABCFF3B58601B198 /* Tile.swift in Sources */,
@@ -566,34 +724,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1042323C2209D716008DC01A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				104232452209D716008DC01A /* CheckersTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		104232472209D716008DC01A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				104232502209D716008DC01A /* CheckersUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		104232422209D716008DC01A /* PBXTargetDependency */ = {
+		101AD7B12224D37E00B7CF78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1042322B2209D715008DC01A /* Checkers */;
-			targetProxy = 104232412209D716008DC01A /* PBXContainerItemProxy */;
+			targetProxy = 101AD7B02224D37E00B7CF78 /* PBXContainerItemProxy */;
 		};
-		1042324D2209D716008DC01A /* PBXTargetDependency */ = {
+		101E129E2225914B0022A53F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1042322B2209D715008DC01A /* Checkers */;
-			targetProxy = 1042324C2209D716008DC01A /* PBXContainerItemProxy */;
+			targetProxy = 101E129D2225914B0022A53F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -617,6 +759,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		101AD7B22224D37E00B7CF78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFA0873E16A9CB2DB8C16309 /* Pods-Checkers-CheckersUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TEGLEE3UYA;
+				INFOPLIST_FILE = CheckersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Checkers;
+			};
+			name = Debug;
+		};
+		101AD7B32224D37E00B7CF78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30D6720A41C96B73199139C4 /* Pods-Checkers-CheckersUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TEGLEE3UYA;
+				INFOPLIST_FILE = CheckersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Checkers;
+			};
+			name = Release;
+		};
+		101E12A02225914B0022A53F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1CD230739593971B8801007 /* Pods-Checkers-CheckersUnitTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TEGLEE3UYA;
+				INFOPLIST_FILE = CheckersUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checkers.app/Checkers";
+			};
+			name = Debug;
+		};
+		101E12A12225914B0022A53F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23D9049EBCB3CFBB84A9352D /* Pods-Checkers-CheckersUnitTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TEGLEE3UYA;
+				INFOPLIST_FILE = CheckersUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checkers.app/Checkers";
+			};
+			name = Release;
+		};
 		104232522209D716008DC01A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -735,7 +959,7 @@
 		};
 		104232552209D716008DC01A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24311ADDF8637758712C8FA0 /* Pods-Checkers.debug.xcconfig */;
+			baseConfigurationReference = 1F73BFEBEBF53E33403B4622 /* Pods-Checkers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -754,7 +978,7 @@
 		};
 		104232562209D716008DC01A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22317028C1C22D62E0848701 /* Pods-Checkers.release.xcconfig */;
+			baseConfigurationReference = F1ED73D20D3F59B35813FCD9 /* Pods-Checkers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -771,95 +995,27 @@
 			};
 			name = Release;
 		};
-		104232582209D716008DC01A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3E365087F9B8FED0F1C4760 /* Pods-CheckersTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TEGLEE3UYA;
-				INFOPLIST_FILE = CheckersTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checkers.app/Checkers";
-			};
-			name = Debug;
-		};
-		104232592209D716008DC01A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 003C46AA21963982DEC6556C /* Pods-CheckersTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TEGLEE3UYA;
-				INFOPLIST_FILE = CheckersTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checkers.app/Checkers";
-			};
-			name = Release;
-		};
-		1042325B2209D716008DC01A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CADB7BBF203B2592A6BD250 /* Pods-CheckersUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TEGLEE3UYA;
-				INFOPLIST_FILE = CheckersUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Checkers;
-			};
-			name = Debug;
-		};
-		1042325C2209D716008DC01A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73479379AC63859F0986705A /* Pods-CheckersUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TEGLEE3UYA;
-				INFOPLIST_FILE = CheckersUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.satishboggarapu.apps.CheckersUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Checkers;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		101AD7B42224D37E00B7CF78 /* Build configuration list for PBXNativeTarget "CheckersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				101AD7B22224D37E00B7CF78 /* Debug */,
+				101AD7B32224D37E00B7CF78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		101E129F2225914B0022A53F /* Build configuration list for PBXNativeTarget "CheckersUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				101E12A02225914B0022A53F /* Debug */,
+				101E12A12225914B0022A53F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		104232272209D715008DC01A /* Build configuration list for PBXProject "Checkers" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -874,24 +1030,6 @@
 			buildConfigurations = (
 				104232552209D716008DC01A /* Debug */,
 				104232562209D716008DC01A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		104232572209D716008DC01A /* Build configuration list for PBXNativeTarget "CheckersTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				104232582209D716008DC01A /* Debug */,
-				104232592209D716008DC01A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1042325A2209D716008DC01A /* Build configuration list for PBXNativeTarget "CheckersUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1042325B2209D716008DC01A /* Debug */,
-				1042325C2209D716008DC01A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

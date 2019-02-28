@@ -16,12 +16,12 @@ public class FirebaseReference {
     }
 
     /// Reference to the head of GAME node
-    public func gameReference() -> DatabaseReference {
+    public func gamesReference() -> DatabaseReference {
         return databaseReference.child(FirebaseKey.GAME)
     }
 
     /// Reference to a game given it gameUid
     public func getGameReference(_ gameUid: String) -> DatabaseReference {
-        return gameReference().child(gameUid)
+        return gamesReference().child(gameUid)
     }
 }

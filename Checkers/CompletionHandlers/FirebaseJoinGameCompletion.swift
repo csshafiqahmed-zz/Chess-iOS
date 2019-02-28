@@ -6,4 +6,5 @@
 public enum FirebaseJoinGameCompletion {
     case gameInProgress
     case gameWaitingForPlayer2
+    case gameDoesNotExist
 }

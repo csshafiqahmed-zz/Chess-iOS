@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CheckersTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CheckersTestsVersionString[];
+FOUNDATION_EXPORT double Pods_Checkers_CheckersUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Checkers_CheckersUITestsVersionString[];
 

@@ -17,18 +17,4 @@ extension UIView {
         self.layer.shadowRadius = shadowRadius
         self.layer.shadowColor = color
     }
-    
-    func roundCorners(_ corners: UIRectCorner, _ radii: CGFloat) {
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = self.layer.bounds
-        maskLayer.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radii, height: radii)).cgPath
-        self.layer.mask = maskLayer
-    }
-    
-    func clearConstraints() {
-        for subview in self.subviews {
-            subview.clearConstraints()
-        }
-        self.removeConstraints(self.constraints)
-    }
 }

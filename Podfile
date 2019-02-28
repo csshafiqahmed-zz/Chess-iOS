@@ -11,13 +11,16 @@ target 'Checkers' do
   pod 'Firebase/Database'
 
 
-  target 'CheckersTests' do
-    inherit! :search_paths
-    # Pods for testing
+  target 'CheckersUnitTests' do
+      pod 'SnapKit'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
   end
 
   target 'CheckersUITests' do
-    inherit! :search_paths
+    pod 'SnapKit'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
     # Pods for testing
   end
 
