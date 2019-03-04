@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     private var joinGameButton: UIButton!
     private var nameTextField: UITextField!
     private var nameErrorLabel: UILabel!
+    private var rulesButton: UIButton!
 
     // MARK: Attributes
     private var game: Game!
@@ -91,6 +92,13 @@ class MainViewController: UIViewController {
             maker.right.equalToSuperview().inset(32)
             maker.height.equalTo(52)
         }
+        
+        rulesButton.snp.makeConstraints { maker in
+            maker.top.equalTo(joinGameButton.snp.bottom).offset(36)
+            maker.left.equalToSuperview().offset(32)
+            maker.right.equalToSuperview().inset(32)
+            maker.height.equalTo(52)
+        }
     }
     
     private func setupView() {
@@ -137,6 +145,15 @@ class MainViewController: UIViewController {
         joinGameButton.addTarget(self, action: #selector(joinGameButtonAction), for: .touchUpInside)
         joinGameButton.accessibilityIdentifier = "JoinGame"
         view.addSubview(joinGameButton)
+        
+        rulesButton = UIButton()
+        rulesButton.backgroundColor = .highlightColor
+        rulesButton.setTitle("Rules", for: .normal)
+        rulesButton.setTitleColor(.white, for: .normal)
+        rulesButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        rulesButton.addShadow()
+        rulesButton.addTarget(self, action: #selector(rulesButtonAction), for: .touchUpInside)
+        view.addSubview(rulesButton)
 
         nameErrorLabel = UILabel()
         nameErrorLabel.text = "Name should be greater then 1 letter"
@@ -163,6 +180,10 @@ class MainViewController: UIViewController {
         game.setPlayer2Name(nameTextField.text!)
         game.setIsPlayer1(false)
         navigationController?.pushViewController(JoinGameViewController(), animated: true)
+    }
+    
+    @objc fileprivate func rulesButtonAction() {
+        navigationController?.pushViewController(RulesViewController(), animated: true)
     }
 
     @objc fileprivate func textFieldDidChange() {

@@ -17,6 +17,11 @@ class RulesViewController: UIViewController {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.barTintColor = .backgroundColor
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isOpaque = false
+        navigationController?.navigationBar.topItem?.title = "Rules"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
         webView = WKWebView()
         webView.allowsBackForwardNavigationGestures = true
