@@ -28,6 +28,8 @@ class BoardViewController: UIViewController {
     private var selectedIndexPath: IndexPath?
     private var validMoves: [Move]!
     private let boardSize = UIScreen.main.bounds.width - 24
+    private var isConnected: Bool = true
+    private var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,10 @@ class BoardViewController: UIViewController {
 
         setupView()
         addConstraints()
-
         refreshGameState()
+        
+        firebaseGameController.updatePlayerStatus()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateStatusTimerAction), userInfo: nil, repeats: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +58,14 @@ class BoardViewController: UIViewController {
         super.viewDidAppear(animated)
 
         addValueEventListener()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if game.gameUid != nil {
+            firebaseReference.getGameReference(game.gameUid!).removeAllObservers()
+        }
     }
 
     private func addConstraints() {
@@ -219,6 +231,26 @@ class BoardViewController: UIViewController {
         menuAlert.modalTransitionStyle = .crossDissolve
         navigationController?.present(menuAlert, animated: true, completion: nil)
     }
+    
+    @objc private func updateStatusTimerAction() {
+        firebaseGameController.updatePlayerStatus()
+        if game.isPlayer1 {
+            let difference = Date().timeIntervalSince(game.isPlayer2Connected!)
+            print(difference)
+            if difference > 30 && isConnected {
+                self.presentPlayerDisconnected()
+                self.isConnected = false
+            }
+        } else {
+            let difference = Date().timeIntervalSince(game.isPlayer1Connected!)
+            print(difference)
+            if difference > 30 && isConnected {
+                self.presentPlayerDisconnected()
+                self.isConnected = false
+            }
+        }
+        
+    }
 
     private func refreshGameState() {
         game.refreshGame {
@@ -283,6 +315,18 @@ class BoardViewController: UIViewController {
             self.navigationController?.popToRootViewController(animated: false)
         })
 
+        navigationController?.present(alertDialog, animated: true)
+    }
+    
+    private func presentPlayerDisconnected() {
+        let alertDialog = UIAlertController(title: "Opponent disconnected", message: "Opponent disconnected from the game. Game Over!!", preferredStyle: .alert)
+        
+        alertDialog.addAction(UIAlertAction(title: "Ok", style: .default) { action in
+            self.firebaseGameController.deleteGameFromFirebase(self.game.gameUid!)
+            self.game.resetGame()
+            self.navigationController?.popToRootViewController(animated: false)
+        })
+        
         navigationController?.present(alertDialog, animated: true)
     }
 }

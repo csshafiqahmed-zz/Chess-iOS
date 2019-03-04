@@ -10,7 +10,6 @@ target 'Checkers' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
 
-
   target 'CheckersUnitTests' do
       pod 'SnapKit'
   pod 'Firebase/Core'

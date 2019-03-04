@@ -12,6 +12,8 @@ public class FirebaseKey {
     public static let GAME_PLAYER2: String = "player2"
     public static let GAME_TURN: String = "isPlayer1Turn"
     public static let BOARD: String = "BOARD"
+    public static let PLAYER1_CONNECTED: String = "isPlayer1Connected"
+    public static let PLAYER2_CONNECTED: String = "isPlayer2Connected"
 
 
     public static let PLAYER1_PIECE: String = "P1"
