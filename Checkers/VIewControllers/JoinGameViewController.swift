@@ -108,6 +108,7 @@ class JoinGameViewController: UIViewController {
             textField.isUserInteractionEnabled = false
             textField.resignFirstResponder()
             firebaseGameController.isGameUidValid(textField.text!) { firebaseJoinGameCompletion in
+                print(firebaseJoinGameCompletion)
                 switch firebaseJoinGameCompletion {
                 case .gameWaitingForPlayer2:
                     self.joinGame()
