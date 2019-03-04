@@ -33,7 +33,6 @@ class BoardViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .backgroundColor
-        navigationController?.setNavigationBarHidden(true, animated: false)
         firebaseGameController = FirebaseGameController()
         firebaseReference = FirebaseReference()
         game = Game.getInstance()
@@ -43,6 +42,12 @@ class BoardViewController: UIViewController {
         addConstraints()
 
         refreshGameState()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -199,9 +204,20 @@ class BoardViewController: UIViewController {
         menuButton.setTitle("MENU", for: .normal)
         menuButton.setTitleColor(.white, for: .normal)
         menuButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        menuButton.addTarget(self, action: #selector(menuButtonAction), for: .touchUpInside)
         menuButton.addShadow()
         view.addSubview(menuButton)
 
+    }
+    
+    @objc private func menuButtonAction() {
+        let menuAlert = MenuAlertView()
+        menuAlert.delegate = self
+        menuAlert.providesPresentationContextTransitionStyle = true
+        menuAlert.definesPresentationContext = true
+        menuAlert.modalPresentationStyle = .overFullScreen
+        menuAlert.modalTransitionStyle = .crossDissolve
+        navigationController?.present(menuAlert, animated: true, completion: nil)
     }
 
     private func refreshGameState() {
@@ -222,6 +238,15 @@ class BoardViewController: UIViewController {
             if snapshot.exists() {
                 self.game.refreshGame(dataSnapshot: snapshot)
                 self.refreshView()
+            } else {
+                let alertView = UIAlertController(title: "Game Over", message: "Your opponent has quit the game.", preferredStyle: .alert)
+                
+                alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    self.firebaseGameController.deleteGameFromFirebase(self.game.gameUid!)
+                    self.game.resetGame()
+                    self.navigationController?.popToRootViewController(animated: false)
+                }))
+                self.navigationController?.present(alertView, animated: true, completion: nil)
             }
         }
     }
@@ -322,5 +347,23 @@ extension BoardViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension BoardViewController: MenuAlertViewDelegate {
+    func ruleButtonAction() {
+        navigationController?.pushViewController(RulesViewController(), animated: true)
+    }
+    
+    func quitGameButtonAction() {
+        let alertView = UIAlertController(title: "Quit Game", message: "Are you sure you want to quit the game?", preferredStyle: .alert)
+        
+        alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+            self.navigationController?.popToRootViewController(animated: false)
+            self.firebaseGameController.deleteGameFromFirebase(self.game.gameUid!)
+            self.game.resetGame()
+        }))
+        
+        navigationController?.present(alertView, animated: true, completion: nil)
     }
 }

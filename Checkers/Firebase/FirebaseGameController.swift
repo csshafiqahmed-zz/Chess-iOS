@@ -34,7 +34,7 @@ public class FirebaseGameController {
 
     /// Checks if user can enter a game with uid
     public func isGameUidValid(_ gameUid: String, completion: @escaping ((FirebaseJoinGameCompletion) -> Void)) {
-        let gameReference = firebaseReference.getGameReference(gameUid).child(FirebaseKey.GAME_PLAYER2)
+        let gameReference = firebaseReference.getGameReference(gameUid)
         gameReference.observeSingleEvent(of: .value) { (gameSnapshot: DataSnapshot) in
             if gameSnapshot.exists() {
                 if gameSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER2).exists() {
