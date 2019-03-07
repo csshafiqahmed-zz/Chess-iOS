@@ -21,8 +21,8 @@ public class FirebaseGameController {
         let data: [String: Any?] = [FirebaseKey.GAME_PLAYER1: game.player1Name,
                                     FirebaseKey.GAME_PLAYER2: game.player2Name,
                                     FirebaseKey.GAME_TURN: game.isPlayer1Turn,
-                                    FirebaseKey.BOARD: game.board.convertToFirebase()]
-
+                                    FirebaseKey.BOARD: game.board.convertToFirebase(),
+                                    FirebaseKey.PLAYER1_CONNECTED: Date().millisecondsSince1970]
 
         firebaseReference.getGameReference(game.gameUid!).setValue(data)
     }
@@ -61,18 +61,26 @@ public class FirebaseGameController {
     }
 
     public func pushGame() {
-        let data: [String: Any?] = [FirebaseKey.GAME_PLAYER1: game.player1Name,
-                                    FirebaseKey.GAME_PLAYER2: game.player2Name,
-                                    FirebaseKey.GAME_TURN: game.isPlayer1Turn,
-                                    FirebaseKey.BOARD: game.board.convertToFirebase()]
+        let gameReference = firebaseReference.getGameReference(game.gameUid!)
 
-
-        firebaseReference.getGameReference(game.gameUid!).setValue(data)
+        gameReference.child(FirebaseKey.GAME_TURN).setValue(game.isPlayer1Turn)
+        gameReference.child(FirebaseKey.BOARD).setValue(game.board.convertToFirebase())
     }
     
     /// Set player 2 name in Firebase
     public func pushPlayer2ToFirebase(_ gameUid: String, player2Name: String? = Game.getInstance().player2Name) {
         let gameReference = firebaseReference.getGameReference(gameUid)
         gameReference.child(FirebaseKey.GAME_PLAYER2).setValue(player2Name)
+        gameReference.child(FirebaseKey.PLAYER2_CONNECTED).setValue(Date().millisecondsSince1970)
+    }
+    
+    public func updatePlayerStatus() {
+        let gameReference = firebaseReference.getGameReference(game.gameUid!)
+        
+        if game.isPlayer1 {
+            gameReference.child(FirebaseKey.PLAYER1_CONNECTED).setValue(Date().millisecondsSince1970)
+        } else {
+            gameReference.child(FirebaseKey.PLAYER2_CONNECTED).setValue(Date().millisecondsSince1970)
+        }
     }
 }

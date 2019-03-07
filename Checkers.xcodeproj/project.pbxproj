@@ -30,6 +30,7 @@
 		109B0474220A559E00E15704 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0473220A559E00E15704 /* UIViewExtensions.swift */; };
 		109B0476220A663A00E15704 /* StartNewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B0475220A663A00E15704 /* StartNewGameViewController.swift */; };
 		10ED6F18222D617500F5B40B /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6F17222D617500F5B40B /* RulesViewController.swift */; };
+		10ED6F1A222DB4FF00F5B40B /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6F19222DB4FF00F5B40B /* DateExtension.swift */; };
 		192E40721500702D377D2422 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E4149D4E7FAF9749C8040 /* JoinGameViewController.swift */; };
 		192E411B35D0E47A70681107 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E44D741B9994C0A329997 /* FirebaseReference.swift */; };
 		192E419E229B912C0C8892EC /* PieceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E40FA418D482A9D1954F9 /* PieceType.swift */; };
@@ -118,6 +119,7 @@
 		109B0473220A559E00E15704 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		109B0475220A663A00E15704 /* StartNewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewGameViewController.swift; sourceTree = "<group>"; };
 		10ED6F17222D617500F5B40B /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		10ED6F19222DB4FF00F5B40B /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		11F79F7554BA3B4A40121FC8 /* Pods_Checkers_CheckersAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkers_CheckersAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		192E40FA418D482A9D1954F9 /* PieceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieceType.swift; sourceTree = "<group>"; };
 		192E412A21529BB67EC8228A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 			children = (
 				109B0471220A54FA00E15704 /* UIColorExtensions.swift */,
 				109B0473220A559E00E15704 /* UIViewExtensions.swift */,
+				10ED6F19222DB4FF00F5B40B /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104232322209D715008DC01A /* MainViewController.swift in Sources */,
+				10ED6F1A222DB4FF00F5B40B /* DateExtension.swift in Sources */,
 				109B0474220A559E00E15704 /* UIViewExtensions.swift in Sources */,
 				104232302209D715008DC01A /* AppDelegate.swift in Sources */,
 				109B046F220A547800E15704 /* Color.swift in Sources */,

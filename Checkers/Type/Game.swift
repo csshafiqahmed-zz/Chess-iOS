@@ -15,6 +15,8 @@ public class Game {
     public private(set) var player2Name: String?
     public private(set) var isPlayer1Turn: Bool = true
     public private(set) var isPlayer1: Bool = true
+    public private(set) var isPlayer1Connected: Date?
+    public private(set) var isPlayer2Connected: Date?
     public private(set) var board: Board!
 
     private init() {
@@ -35,6 +37,8 @@ public class Game {
         player2Name = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER2).value as? String
         isPlayer1Turn = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_TURN).value as! Bool
         board = Board(snapshot: dataSnapshot.childSnapshot(forPath: FirebaseKey.BOARD))
+        isPlayer1Connected = Date(milliseconds: (dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER1_CONNECTED).value as? Int)!)
+        isPlayer2Connected = Date(milliseconds: (dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER2_CONNECTED).value as? Int)!)
     }
 
     public func refreshGame(completion: @escaping (() -> Void)) {
@@ -47,6 +51,8 @@ public class Game {
                 self.player2Name = gameSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER2).value as? String
                 self.isPlayer1Turn = gameSnapshot.childSnapshot(forPath: FirebaseKey.GAME_TURN).value as! Bool
                 self.board = Board(snapshot: gameSnapshot.childSnapshot(forPath: FirebaseKey.BOARD))
+                self.isPlayer1Connected = Date(milliseconds: (gameSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER1_CONNECTED).value as? Int)!)
+                self.isPlayer2Connected = Date(milliseconds: (gameSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER2_CONNECTED).value as? Int)!)
             case .failure:
                 print("Failed to refresh game")
             }
