@@ -36,6 +36,7 @@ class BoardCollectionViewCell: UICollectionViewCell {
         addSubview(piece)
     }
 
+    /// Refresh cell UI given Tile object. Sets piece type, background
     public func refreshCell(_ tile: Tile?) {
         if let tile = tile {
             piece.setPieceType((tile.isPlayer1) ? .RED : .BLUE)
@@ -49,19 +50,23 @@ class BoardCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    /// Set piece type
     public func setPieceType(_ pieceType: PieceType) {
         piece.setPieceType(pieceType)
     }
 
+    /// Toggle if piece is hidden
     public func setPieceIsHidden(_ isHidden: Bool) {
         piece.isHidden = isHidden
     }
-    
+
+    /// Highlight cell if visible as possible move
     public func highlightCell() {
         piece.isHidden = false
         piece.alpha = 0.3
     }
-    
+
+    /// Highlight piece if selected on to make a move and is valid selection
     public func highlightPiece() {
         piece.highlightPiece()
     }

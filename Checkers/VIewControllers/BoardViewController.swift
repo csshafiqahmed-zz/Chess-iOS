@@ -66,6 +66,7 @@ class BoardViewController: UIViewController {
         if game.gameUid != nil {
             firebaseReference.getGameReference(game.gameUid!).removeAllObservers()
         }
+        timer = nil
     }
 
     private func addConstraints() {
@@ -402,11 +403,15 @@ extension BoardViewController: MenuAlertViewDelegate {
     func quitGameButtonAction() {
         let alertView = UIAlertController(title: "Quit Game", message: "Are you sure you want to quit the game?", preferredStyle: .alert)
         
-        alertView.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+        alertView.addAction(UIAlertAction(title: "Quit", style: .default, handler: { action in
             self.navigationController?.popToRootViewController(animated: false)
             self.firebaseGameController.deleteGameFromFirebase(self.game.gameUid!)
             self.game.resetGame()
         }))
+
+        alertView.addAction(UIAlertAction(title: "Cancel", style: .default) { action in
+            alertView.dismiss(animated: true)
+        })
         
         navigationController?.present(alertView, animated: true, completion: nil)
     }

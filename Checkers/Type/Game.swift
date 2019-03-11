@@ -31,16 +31,27 @@ public class Game {
         return game
     }
 
+    /// Refresh game with DataSnapshot
     public func refreshGame(dataSnapshot: DataSnapshot) {
         gameUid = dataSnapshot.key
         player1Name = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER1).value as? String
         player2Name = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_PLAYER2).value as? String
-        isPlayer1Turn = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_TURN).value as! Bool
         board = Board(snapshot: dataSnapshot.childSnapshot(forPath: FirebaseKey.BOARD))
-        isPlayer1Connected = Date(milliseconds: (dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER1_CONNECTED).value as? Int)!)
-        isPlayer2Connected = Date(milliseconds: (dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER2_CONNECTED).value as? Int)!)
+        if let player1Time = dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER1_CONNECTED).value as? Int {
+            isPlayer1Connected = Date(milliseconds: player1Time)
+        }
+        
+        if let player2Time = dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER2_CONNECTED).value as? Int {
+            isPlayer2Connected = Date(milliseconds: player2Time)
+        }
+//        isPlayer1Connected = Date(milliseconds: (dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER1_CONNECTED).value as? Int)!)
+//        isPlayer2Connected = Date(milliseconds: (dataSnapshot.childSnapshot(forPath: FirebaseKey.PLAYER2_CONNECTED).value as? Int)!)
+        if let playerTurn = dataSnapshot.childSnapshot(forPath: FirebaseKey.GAME_TURN).value as? Bool {
+            isPlayer1Turn = playerTurn
+        }
     }
 
+    /// Refresh game with new firebase fetch request
     public func refreshGame(completion: @escaping (() -> Void)) {
         let firebaseGameController = FirebaseGameController()
         firebaseGameController.fetchGame(gameUid!) { firebaseFetchGameCompletion in
@@ -60,6 +71,7 @@ public class Game {
         }
     }
 
+    /// Start a new game
     public func startNewGame(_ name: String?) {
         let util = Util()
         self.player1Name = name
@@ -101,6 +113,7 @@ public class Game {
         return false
     }
 
+    /// Returns array of possible moves for given row, col. Performs validation checks for current player also
     public func getPossibleMovesForPiece(row: Int, col: Int) -> [Move] {
         var validMoves = [Move]()
         if let tile = board.getTileForRowCol(row: row, col: col) {
@@ -127,7 +140,8 @@ public class Game {
         }
         return validMoves
     }
-    
+
+    /// Returns possible move combination for current piece
     private func getPossibleMoves(_ tile: Tile) -> [(row: Int, col: Int)] {
         var possibleMoves = [(row: Int, col: Int)]()
         let row = tile.row!
@@ -160,6 +174,7 @@ public class Game {
         return row == 0
     }
 
+    /// Move piece with Move object
     public func movePiece(_ move: Move) {
         if let tile = board.getTileForRowCol(row: move.moveFromIndexPath.item, col: move.moveFromIndexPath.section) {
             let newTile = Tile(row: move.moveToIndexPath.item, col: move.moveToIndexPath.section, isKing: tile.isKing, isPlayer1: tile.isPlayer1)
@@ -184,6 +199,7 @@ public class Game {
         }
     }
 
+    /// Checks if a player has won
     public func didAPlayerWin() -> Win {
         if board.getPlayer1KillCount() == 12 {
             return .PLAYER1

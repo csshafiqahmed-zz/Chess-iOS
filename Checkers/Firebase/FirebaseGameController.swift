@@ -48,7 +48,7 @@ public class FirebaseGameController {
         }
     }
     
-    ///
+    /// Fetch game from firebase for given UID, once done return the completion handler with result
     public func fetchGame(_ gameUid: String, completion: @escaping ((FirebaseFetchGameCompletion) -> Void)) {
         let gameReference = firebaseReference.getGameReference(gameUid)
         gameReference.observeSingleEvent(of: .value) { (gameSnapshot: DataSnapshot) in
@@ -60,6 +60,7 @@ public class FirebaseGameController {
         }
     }
 
+    /// Push game to firebase when a turn ahs taken place by pushing BOARD node and toggling player turn boolean
     public func pushGame() {
         let gameReference = firebaseReference.getGameReference(game.gameUid!)
 
@@ -73,9 +74,11 @@ public class FirebaseGameController {
         gameReference.child(FirebaseKey.GAME_PLAYER2).setValue(player2Name)
         gameReference.child(FirebaseKey.PLAYER2_CONNECTED).setValue(Date().millisecondsSince1970)
     }
-    
+
+    /// Update place status of connected or not, by checking firebase for last updated value
     public func updatePlayerStatus() {
-        let gameReference = firebaseReference.getGameReference(game.gameUid!)
+        guard let uid = game.gameUid  else { return }
+        let gameReference = firebaseReference.getGameReference(uid)
         
         if game.isPlayer1 {
             gameReference.child(FirebaseKey.PLAYER1_CONNECTED).setValue(Date().millisecondsSince1970)
